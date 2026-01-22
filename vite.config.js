@@ -17,6 +17,11 @@ export default defineConfig({
                 hourdPrivacy: resolve(__dirname, 'hourdprivacypolicy/index.html'),
                 hourdTerms: resolve(__dirname, 'hourdterms/index.html'),
 
+                costime: resolve(__dirname, 'costime/index.html'),
+                costimeSupport: resolve(__dirname, 'costimesupport/index.html'),
+                costimePrivacy: resolve(__dirname, 'costimeprivacypolicy/index.html'),
+                costimeTerms: resolve(__dirname, 'costimeterms/index.html'),
+
                 pottyDog: resolve(__dirname, 'pottydog/index.html'),
                 pottyDogSupport: resolve(__dirname, 'pottydogsupport/index.html'),
                 pottyDogPrivacy: resolve(__dirname, 'pottydogprivacypolicy/index.html'),
