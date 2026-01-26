@@ -23,7 +23,7 @@ export default defineConfig({
 
                 costime: resolve(__dirname, 'costime/index.html'),
                 costimeSupport: resolve(__dirname, 'costimesupport/index.html'),
-                costimePrivacy: resolve(__dirname, 'costimeprivacypolicy/index.html'),
+                costimePrivacy: resolve(__dirname, 'timecostifyprivacypolicy/index.html'),
                 costimeTerms: resolve(__dirname, 'costimeterms/index.html'),
 
                 pottyDog: resolve(__dirname, 'pottydog/index.html'),
