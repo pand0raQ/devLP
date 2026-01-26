@@ -22,7 +22,7 @@ export default defineConfig({
                 hourdTerms: resolve(__dirname, 'hourdterms/index.html'),
 
                 costime: resolve(__dirname, 'timecostify/index.html'),
-                costimeSupport: resolve(__dirname, 'costimesupport/index.html'),
+                costimeSupport: resolve(__dirname, 'timecostifysupport/index.html'),
                 costimePrivacy: resolve(__dirname, 'timecostifyprivacypolicy/index.html'),
                 costimeTerms: resolve(__dirname, 'costimeterms/index.html'),
 
