@@ -24,6 +24,8 @@ export default defineConfig({
                 costime: resolve(__dirname, 'timecostify/index.html'),
                 costimeSupport: resolve(__dirname, 'timecostifysupport/index.html'),
                 costimePrivacy: resolve(__dirname, 'timecostifyprivacypolicy/index.html'),
+                costimePrivacyAppstore: resolve(__dirname, 'costimeprivacypolicy/index.html'),
+                costimePrivacyFooter: resolve(__dirname, 'timecostyprivacypolicy/index.html'),
                 costimeTerms: resolve(__dirname, 'costimeterms/index.html'),
 
                 pottyDog: resolve(__dirname, 'pottydog/index.html'),
