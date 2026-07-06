@@ -1,2 +1,27 @@
 User-agent: *
 Allow: /
+
+# Welcoming AI & Search bots
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://pand0raq.dev/sitemap.xml
+LLM-txt: https://pand0raq.dev/llms.txt

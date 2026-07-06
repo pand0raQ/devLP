@@ -4,72 +4,169 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CoupleStatus - Partner Sync & Mood Tracker</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>Couple Status - Partner Mood Sync & Lock Screen Widget</title>
     <meta name="description"
-        content="Sync your mood and activity with your partner. Share how you feel and what you're doing in real-time. Keep your relationship in sync with CoupleStatus.">
+        content="Sync your mood and activity with your partner in real-time. Avoid the roommate vibe and stay connected on iOS Lock Screen widgets. Try Couple Status now." />
+    <meta name="keywords"
+        content="couple mood tracker app, partner mood sync widget, couple status sharing, real-time couple status widget, relationship status tracker, stay connected with partner, share mood with partner app" />
+    <link rel="canonical" href="https://pand0raq.dev/couplestatus/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pand0raq.dev/couplestatus/">
-    <meta property="og:title" content="CoupleStatus - Partner Sync">
-    <meta property="og:description" content="Share your mood and activity with your partner. Stay connected.">
+    <meta property="og:title" content="Couple Status - Stay Connected Partner Widget">
+    <meta property="og:description" content="Sync mood, activity, and status on your Home & Lock Screen. Connect without the logistics texts.">
     <meta property="og:image"
-        content="https://static.tildacdn.one/tild6136-3732-4535-b565-666163363030/1024x1024bb-2.png">
+        content="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/38/9c/fd/389cfd10-4835-e5a7-9642-8b0cbb83cca9/Placeholder.mill/1200x630wa.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://pand0raq.dev/couplestatus/">
-    <meta property="twitter:title" content="CoupleStatus - Partner Sync">
-    <meta property="twitter:description" content="Share your mood and activity with your partner. Stay connected.">
+    <meta property="twitter:title" content="Couple Status - Stay Connected">
+    <meta property="twitter:description" content="Sync mood, activity, and status on your Home & Lock Screen. Connect without the logistics texts.">
     <meta property="twitter:image"
-        content="https://static.tildacdn.one/tild6136-3732-4535-b565-666163363030/1024x1024bb-2.png">
+        content="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/38/9c/fd/389cfd10-4835-e5a7-9642-8b0cbb83cca9/Placeholder.mill/1200x630wa.jpg">
 
     <link rel="stylesheet" href="../src/style.css">
+
+    <!-- JSON-LD Structured Data for SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Couple Status - Stay Connected",
+        "alternateName": "CoupleStatus",
+        "description": "Daily routines slowly turning your relationship into roommate mode? CoupleStatus lets you sync your mood and activity with your partner in real-time using interactive Lock Screen widgets.",
+        "operatingSystem": "Requires iOS 26.0 and watchOS 26.0 or later",
+        "applicationCategory": "LifestyleApplication",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "category": "free"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "Abdukhalik Magomedov"
+        },
+        "downloadUrl": "https://apps.apple.com/us/app/couple-status-stay-connected/id6756455316",
+        "sameAs": [
+            "https://apps.apple.com/us/app/couple-status-stay-connected/id6756455316"
+        ]
+    }
+    </script>
 </head>
 
 <body>
-    <!-- Back Button -->
-    <nav class="container" style="padding-top: 2rem;">
-        <a href="/" class="text-muted" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+    <!-- Navigation Back Link -->
+    <nav class="container animate-fade-in" style="padding-top: 2rem;">
+        <a href="/" class="text-muted" style="display: inline-flex; align-items: center; gap: 0.5rem;" id="nav-back-home">
             &larr; Back to all apps
         </a>
     </nav>
 
-    <div id="app" style="padding-top: 1rem;">
+    <main id="app" style="padding-top: 1rem;">
+        <!-- Header / App Hero Section -->
         <header class="container text-center animate-fade-in">
             <img src="https://static.tildacdn.one/tild6136-3732-4535-b565-666163363030/1024x1024bb-2.png"
-                alt="CoupleStatus Icon"
-                style="width: 100px; height: 100px; border-radius: 20px; margin: 0 auto 1.5rem; display: block; object-fit: cover;">
-            <h1 style="font-size: var(--font-size-3xl); font-weight: 700; margin-bottom: 0.5rem;">CoupleStatus</h1>
-            <p class="text-muted" style="font-size: var(--font-size-lg);">Partner Sync - Share your mood and activity
+                alt="Couple Status App Icon"
+                style="width: 100px; height: 100px; border-radius: 22px; margin: 0 auto 1.5rem; display: block; object-fit: cover; box-shadow: 0 8px 32px rgba(0,0,0,0.3);">
+            <h1 style="font-size: var(--font-size-3xl); font-weight: 700; margin-bottom: 0.5rem;">Couple Status</h1>
+            <p class="text-muted" style="font-size: var(--font-size-lg); max-width: 600px; margin: 0 auto 1.5rem;">
+                Stay connected with your partner. Sync mood, activity, and digital hugs directly on your Home and Lock Screens.
             </p>
 
             <div style="margin-top: 2rem;">
-                <a href="#" class="btn">Download on the App Store</a>
+                <a href="https://apps.apple.com/us/app/couple-status-stay-connected/id6756455316" 
+                   class="btn" 
+                   id="btn-download-appstore" 
+                   target="_blank" 
+                   rel="noopener">Download on the App Store</a>
             </div>
         </header>
 
+        <!-- Product Value Proposition Sections -->
         <section class="container animate-fade-in" style="margin-top: 4rem; animation-delay: 0.2s;">
-            <div class="glass-card">
-                <h2 style="margin-bottom: 1rem;">About this app</h2>
-                <p class="text-muted" style="line-height: 1.8;">
-                    This is a detailed description of the app. It explains what the app does, how it works, and why it
-                    is useful.
-                    Optimized for SEO with keywords related to the app's functionality.
+            <div class="glass-card" style="margin-bottom: 2rem;">
+                <h2 style="margin-bottom: 1.5rem; font-size: var(--font-size-xl);">Skip the "Roommate" Vibe & Logistics</h2>
+                <p class="text-muted" style="line-height: 1.8; margin-bottom: 1.5rem;">
+                    Daily routines can slowly turn your relationship into roommate mode. Stop the endless, tedious logistics texts just to ask what they are doing. See if your partner is <strong>"Doing Chores"</strong>, <strong>"Heading Home"</strong>, or needs some <strong>"Alone Time"</strong> without sending a single text. Focus on being partners, not managers.
                 </p>
+                <p class="text-muted" style="line-height: 1.8;">
+                    Long distance is tough. Couple Status gives you a subtle, ambient sense of presence throughout the day. A quick glance at your Lock Screen widget tells you if they are in a <strong>"Flirty Mood"</strong> or just <strong>"Thinking of You"</strong>, making the miles feel shorter.
+                </p>
+            </div>
+
+            <!-- Core Features List Grid -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 4rem;">
+                <div class="glass-card">
+                    <h3 style="margin-bottom: 0.8rem; font-size: 1.2rem;">• Lock Screen Widgets</h3>
+                    <p class="text-muted" style="font-size: 0.95rem; line-height: 1.6;">
+                        Check your partner's current status, mood, and activity without even unlocking your iPhone. Clean, glanceable widgets built for iOS.
+                    </p>
+                </div>
+                <div class="glass-card">
+                    <h3 style="margin-bottom: 0.8rem; font-size: 1.2rem;">• Digital Hugs & Interactions</h3>
+                    <p class="text-muted" style="font-size: 0.95rem; line-height: 1.6;">
+                        Use the "Thinking of You" feature to trigger haptic feedback and animations on your partner's device with a single tap.
+                    </p>
+                </div>
+                <div class="glass-card">
+                    <h3 style="margin-bottom: 0.8rem; font-size: 1.2rem;">• Avoid Interruption Guilt</h3>
+                    <p class="text-muted" style="font-size: 0.95rem; line-height: 1.6;">
+                        Know if they are in a "Work Call" or in "Focused Work" before sending a text. Protect their focus, respect their boundaries.
+                    </p>
+                </div>
             </div>
         </section>
 
-        <footer class="container text-center text-muted"
-            style="margin-top: 4rem; padding-bottom: 2rem; font-size: 0.9rem;">
-            <div style="margin-bottom: 1rem; display: flex; justify-content: center; gap: 1.5rem;">
-                <a href="/couplestatussupport/">Support</a>
-                <a href="/couplestatusprivacypolicy/">Privacy Policy</a>
-                <a href="/couplestatusterms/">Terms of Service</a>
+        <!-- Conversational FAQ Section (Highly optimized for Perplexity, ChatGPT, and Gemini query maps) -->
+        <section class="container animate-fade-in" style="margin-top: 2rem; margin-bottom: 4rem;">
+            <div class="glass-card" style="padding: var(--spacing-lg);">
+                <h2 style="margin-bottom: 2rem; text-align: center;">Frequently Asked Questions</h2>
+                
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem; color: var(--color-text);">What is Couple Status?</h3>
+                    <p class="text-muted" style="line-height: 1.6;">
+                        Couple Status is an iOS app designed for couples to sync their real-time mood and activity directly onto their iPhone Lock Screens using modern widgets, helping them stay connected ambiently.
+                    </p>
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem; color: var(--color-text);">How does the mood and status sync work?</h3>
+                    <p class="text-muted" style="line-height: 1.6;">
+                        Once you connect with your partner via a unique pairing link, you can choose from default activities like "Doing Chores", "Hobby", or "Focused Work", or update your custom mood. The app automatically pushes updates to your partner's widgets in real-time.
+                    </p>
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem; color: var(--color-text);">Do we need to buy two separate subscriptions?</h3>
+                    <p class="text-muted" style="line-height: 1.6;">
+                        No! Couple Status uses a "pay once, use together" pricing model. A single subscription unlocks Premium access for both partners.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem; color: var(--color-text);">What are the compatibility requirements?</h3>
+                    <p class="text-muted" style="line-height: 1.6;">
+                        Couple Status is fully optimized for iOS devices running iOS 26.0 or later, and Apple Watches running watchOS 26.0 or later.
+                    </p>
+                </div>
             </div>
-            &copy; 2025 Halik Magomedov. All rights reserved.
-        </footer>
-    </div>
+        </section>
+    </main>
+
+    <!-- Footer links -->
+    <footer class="container text-center text-muted" style="margin-top: 4rem; padding-bottom: 2rem; font-size: 0.9rem;">
+        <div style="margin-bottom: 1rem; display: flex; justify-content: center; gap: 1.5rem;">
+            <a href="/couplestatussupport/">Support</a>
+            <a href="/couplestatusprivacypolicy/">Privacy Policy</a>
+            <a href="/couplestatusterms/">Terms of Service</a>
+        </div>
+        <p>&copy; 2026 Halik Magomedov. All rights reserved.</p>
+    </footer>
 </body>
 
 </html>

@@ -11,9 +11,14 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://pand0raq.dev/timecostify/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://pand0raq.dev/hourd/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://pand0raq.dev/pottydog/</loc>
@@ -23,6 +28,27 @@
   <url>
     <loc>https://pand0raq.dev/couplestatus/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
+  </url>
+  <!-- Support & Policies for search discovery -->
+  <url>
+    <loc>https://pand0raq.dev/couplestatussupport/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://pand0raq.dev/couplestatusprivacypolicy/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://pand0raq.dev/timecostifysupport/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://pand0raq.dev/timecostifyprivacypolicy/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>

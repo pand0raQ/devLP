@@ -1,0 +1,72 @@
+# Full Documentation: Apps by Halik Magomedov
+
+Detailed overview of iOS utilities designed for mindfulness, relationships, and finance.
+
+---
+
+## 1. Couple Status - Stay Connected
+
+### Value Proposition
+Daily routines can slowly turn relationships into roommate mode. Logistics texts and anxiety over delayed replies can strain connection. CoupleStatus bridges this distance by providing a subtle sense of presence on your Home and Lock Screen without interruption guilt.
+
+### Core Features
+*   **Lock Screen Widgets**: Instantly see your partner's status (e.g. "Doing Chores", "At Work", "Sleeping", "Free to Chat") at a glance.
+*   **Thinking of You**: Send a haptic digital "hug" with a single tap.
+*   **Mood & Activity Sync**: Select from preset moods (e.g., "Flirty Mood", "Thinking of You", "Focused Work", "Hobby", "Alone Time") or set custom states.
+*   **One Shared Subscription**: Pay once, and both partners get full access.
+
+### Technical & Compatibility
+*   Requires iOS 26.0 or later.
+*   Requires watchOS 26.0 or later.
+*   Compatible with iPhone, iPad, and iPod touch.
+*   Category: Lifestyle.
+
+### URLs
+*   Landing Page: https://pand0raq.dev/couplestatus/
+*   Privacy Policy: https://pand0raq.dev/couplestatusprivacypolicy/
+*   Terms: https://pand0raq.dev/couplestatusterms/
+*   Support: https://pand0raq.dev/couplestatussupport/
+
+---
+
+## 2. Timecostify: Cost in Time
+
+### Value Proposition
+A cognitive reframing tool for personal finance. Instead of evaluating price tags in abstract dollars, Timecostify calculates prices in terms of the hours you must work to earn that amount. It helps users make more mindful, deliberate spending decisions.
+
+### Core Features
+*   **Work Hours Converter**: Type any price and see the cost converted into work hours, days, weeks, months, or years based on your custom wage input (hourly, monthly, or yearly).
+*   **Interactive Widgets**: Track spending decisions ("Buy" or "Don't Buy") directly from the iOS Home Screen.
+*   **Savings Tracker**: Visualize your accumulated savings and tracked decisions in simple, motivating charts.
+*   **Multi-Currency Support**: Automatically converts foreign currencies for seamless calculations when traveling or shopping online.
+*   **Household Mode**: Supports individual calculations or combined household schedules.
+
+### Technical & Compatibility
+*   Requires iOS 18.6 or later.
+*   Compatible with iPhone, iPad, and iPod touch.
+*   Category: Finance.
+
+### URLs
+*   Landing Page: https://pand0raq.dev/timecostify/
+*   Privacy Policy: https://pand0raq.dev/timecostifyprivacypolicy/
+*   Terms: https://pand0raq.dev/costimeterms/
+*   Support: https://pand0raq.dev/timecostifysupport/
+*   Legacy Redirect: https://pand0raq.dev/hourd/ (formerly named Hourd)
+
+---
+
+## 3. Breathe Pulse - Haptic Breathing
+
+### Value Proposition
+Mindfulness and breathwork tool utilizing the Taptic Engine on iPhone and Apple Watch to guide breathing exercises without needing to look at the screen.
+*   App Store: [Breathe Pulse](https://apps.apple.com/us/app/breathe-pulse-haptic-breathing/id6503657317)
+*   Privacy Policy: https://pand0raq.dev/breathpulseprivacypolicy/
+
+---
+
+## 4. PottyDog - Pet Activity Tracker
+
+### Value Proposition
+A companion app for dog owners to track walks, food, potty timings, and general health metrics.
+*   App Store: [PottyDog](https://apps.apple.com/us/app/pottydog-dog-poop-tracker/id6739466542)
+*   Privacy Policy: https://pand0raq.dev/pottydogprivacypolicy/

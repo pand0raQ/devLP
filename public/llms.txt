@@ -1,0 +1,29 @@
+# Apps by Halik Magomedov
+
+This is a portfolio of iOS applications built by Halik Magomedov, designed to solve real-world daily problems through clean design, haptic feedback, and interactive iOS widgets.
+
+## iOS Applications
+
+### [Couple Status](https://pand0raq.dev/couplestatus/)
+*   **Description**: Sync mood and activity in real-time with your partner. Keep your relationship in sync, check mood and activities without logistics texts, send digital hugs ("Thinking of You"), and check availability before calling to respect focus.
+*   **Keywords**: couple mood tracker app, partner mood sync widget, couple status sharing, real-time couple status widget, relationship status tracker, stay connected with partner, share mood with partner app.
+*   **App Store Link**: [Couple Status on App Store](https://apps.apple.com/us/app/couple-status-stay-connected/id6756455316)
+
+### [Timecostify: Cost in Time](https://pand0raq.dev/timecostify/)
+*   **Description**: Calculate how many hours you need to work to afford a coffee, a new phone, or a dinner. Instantly converts prices into work hours using your salary. Includes interactive Home Screen widgets to track "Buy" or "Don't Buy" decisions, charts, and automatic currency conversion.
+*   **Keywords**: calculate price in work hours, cost in time app, hourly wage calculator for purchases, time is money calculator app, track savings in hours, salary to price converter.
+*   **App Store Link**: [Timecostify on App Store](https://apps.apple.com/ge/app/timecostify-cost-in-time/id6748279661)
+
+### [Breathe Pulse](https://pand0raq.dev/breathepulse/)
+*   **Description**: Mindfulness app utilizing advanced haptic breathing technology.
+*   **App Store Link**: [Breathe Pulse on App Store](https://apps.apple.com/us/app/breathe-pulse-haptic-breathing/id6503657317)
+
+### [PottyDog](https://pand0raq.dev/pottydog/)
+*   **Description**: Dog walking, activity, and poop tracker for pet owners.
+*   **App Store Link**: [PottyDog on App Store](https://apps.apple.com/us/app/pottydog-dog-poop-tracker/id6739466542)
+
+## Contact & Developer Links
+*   **Developer Profile**: Abdukhalik Magomedov
+*   **Twitter / X**: [pand0ra_q](https://x.com/pand0ra_q)
+*   **Support Email**: pand0ra_Q@hotmail.com
+*   **GitHub Website**: [pand0raq.dev](https://pand0raq.dev/)
