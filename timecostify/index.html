@@ -99,41 +99,7 @@
             </div>
         </section>
 
-        <!-- Interactive Cost-in-Time Calculator (SEO Engagement Booster) -->
-        <section class="container animate-fade-in" style="margin-top: 4rem; animation-delay: 0.15s;">
-            <div class="glass-card" style="border: 1px solid var(--color-primary); padding: var(--spacing-lg);">
-                <h2 style="text-align: center; margin-bottom: 1.5rem;">Try the Cost-in-Time Calculator</h2>
-                <p class="text-muted text-center" style="margin-bottom: 2rem; font-size: 0.95rem;">
-                    Input your income and the item price below to calculate how much work time it represents.
-                </p>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
-                    <div>
-                        <label for="calc-income" style="display: block; margin-bottom: 0.5rem; font-size: 0.9rem; font-weight: 600;">Your Income ($)</label>
-                        <input type="number" id="calc-income" value="5000" min="1" style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid var(--color-card-border); background: rgba(0,0,0,0.3); color: white;">
-                    </div>
-                    <div>
-                        <label for="calc-type" style="display: block; margin-bottom: 0.5rem; font-size: 0.9rem; font-weight: 600;">Income Schedule</label>
-                        <select id="calc-type" style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid var(--color-card-border); background: rgba(0,0,0,0.3); color: white; cursor: pointer;">
-                            <option value="hourly">Hourly Wage</option>
-                            <option value="monthly" selected>Monthly Salary</option>
-                            <option value="yearly">Yearly Salary</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="calc-hours" style="display: block; margin-bottom: 0.5rem; font-size: 0.9rem; font-weight: 600;">Work Hours / Week</label>
-                        <input type="number" id="calc-hours" value="40" min="1" max="168" style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid var(--color-card-border); background: rgba(0,0,0,0.3); color: white;">
-                    </div>
-                    <div>
-                        <label for="calc-price" style="display: block; margin-bottom: 0.5rem; font-size: 0.9rem; font-weight: 600;">Purchase Price ($)</label>
-                        <input type="number" id="calc-price" value="1200" min="1" style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid var(--color-card-border); background: rgba(0,0,0,0.3); color: white;">
-                    </div>
-                </div>
-                <div class="text-center" style="background: rgba(59, 130, 246, 0.1); padding: 1.5rem; border-radius: 12px; border: 1px dashed var(--color-primary);">
-                    <div style="font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;" class="text-muted">Real Cost:</div>
-                    <div id="calc-result" style="font-size: 1.8rem; font-weight: 700; color: white;">Calculating...</div>
-                </div>
-            </div>
-        </section>
+
 
         <!-- Product Details -->
         <section class="container animate-fade-in" style="margin-top: 4rem; animation-delay: 0.2s;">
@@ -199,75 +165,7 @@
         </section>
     </main>
 
-    <!-- Interactive script for SEO calculator -->
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const incomeInput = document.getElementById('calc-income');
-        const typeSelect = document.getElementById('calc-type');
-        const hoursInput = document.getElementById('calc-hours');
-        const priceInput = document.getElementById('calc-price');
-        const resultDiv = document.getElementById('calc-result');
 
-        const calculateTimeCost = () => {
-            const income = parseFloat(incomeInput.value) || 0;
-            const type = typeSelect.value;
-            const hoursPerWeek = parseFloat(hoursInput.value) || 40;
-            const price = parseFloat(priceInput.value) || 0;
-
-            if (income <= 0 || price <= 0 || hoursPerWeek <= 0) {
-                resultDiv.textContent = 'Enter valid values';
-                return;
-            }
-
-            let hourlyWage = 0;
-            if (type === 'hourly') {
-                hourlyWage = income;
-            } else if (type === 'monthly') {
-                // Approximate 4.33 weeks per month
-                hourlyWage = income / (hoursPerWeek * 4.333);
-            } else if (type === 'yearly') {
-                hourlyWage = income / (hoursPerWeek * 52);
-            }
-
-            if (hourlyWage <= 0) {
-                resultDiv.textContent = 'Enter valid values';
-                return;
-            }
-
-            const totalHours = price / hourlyWage;
-            
-            // Format result in weeks, days, hours, and minutes
-            // Assume 8-hour workday, 5-day (40-hour) work week
-            const hoursPerDay = 8;
-            const daysPerWeek = 5;
-
-            let remainingHours = totalHours;
-
-            const weeks = Math.floor(remainingHours / (hoursPerDay * daysPerWeek));
-            remainingHours %= (hoursPerDay * daysPerWeek);
-
-            const days = Math.floor(remainingHours / hoursPerDay);
-            remainingHours %= hoursPerDay;
-
-            const hours = Math.floor(remainingHours);
-            const minutes = Math.round((remainingHours - hours) * 60);
-
-            let resultString = '';
-            if (weeks > 0) resultString += `${weeks}w `;
-            if (days > 0) resultString += `${days}d `;
-            if (hours > 0) resultString += `${hours}h `;
-            if (minutes > 0 || (weeks === 0 && days === 0 && hours === 0)) resultString += `${minutes}m`;
-
-            resultDiv.textContent = `${resultString.trim()} of work time`;
-        };
-
-        [incomeInput, typeSelect, hoursInput, priceInput].forEach(el => {
-            el.addEventListener('input', calculateTimeCost);
-        });
-
-        calculateTimeCost();
-    });
-    </script>
 
     <!-- Footer links -->
     <footer class="container text-center text-muted" style="margin-top: 4rem; padding-bottom: 2rem; font-size: 0.9rem;">
