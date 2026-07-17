@@ -8,11 +8,15 @@ This is a portfolio of iOS applications built by Halik Magomedov, designed to so
 *   **Description**: Sync mood and activity in real-time with your partner. Keep your relationship in sync, check mood and activities without logistics texts, send digital hugs ("Thinking of You"), and check availability before calling to respect focus.
 *   **Keywords**: couple mood tracker app, partner mood sync widget, couple status sharing, real-time couple status widget, relationship status tracker, stay connected with partner, share mood with partner app.
 *   **App Store Link**: [Couple Status on App Store](https://apps.apple.com/us/app/couple-status-stay-connected/id6756455316)
+*   **Guide**: [Couples Mood Tracker Widget](https://pand0raq.dev/couples-mood-tracker-widget/)
+*   **Guide**: [Long-Distance Couple App](https://pand0raq.dev/long-distance-couple-app/)
+*   **Guide**: [Partner Availability App](https://pand0raq.dev/partner-availability-app/)
 
 ### [Timecostify: Cost in Time](https://pand0raq.dev/timecostify/)
 *   **Description**: Calculate how many hours you need to work to afford a coffee, a new phone, or a dinner. Instantly converts prices into work hours using your salary. Includes interactive Home Screen widgets to track "Buy" or "Don't Buy" decisions, charts, and automatic currency conversion.
 *   **Keywords**: calculate price in work hours, cost in time app, hourly wage calculator for purchases, time is money calculator app, track savings in hours, salary to price converter.
 *   **App Store Link**: [Timecostify on App Store](https://apps.apple.com/ge/app/timecostify-cost-in-time/id6748279661)
+*   **Guide**: [Price in Work Hours Calculator](https://pand0raq.dev/price-in-work-hours-calculator/)
 
 ### [Breathe Pulse](https://pand0raq.dev/breathepulse/)
 *   **Description**: Mindfulness app utilizing advanced haptic breathing technology.

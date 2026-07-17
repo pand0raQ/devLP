@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Price in Work Hours Calculator | Timecostify</title>
+    <meta name="description"
+        content="Use this price in work hours calculator to turn a purchase into time. Estimate the hours behind a cost, then explore Timecostify for everyday tracking." />
+    <link rel="canonical" href="https://pand0raq.dev/price-in-work-hours-calculator/" />
+    <meta name="robots" content="index,follow" />
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://pand0raq.dev/price-in-work-hours-calculator/">
+    <meta property="og:title" content="Price in Work Hours Calculator">
+    <meta property="og:description"
+        content="Convert any purchase into work hours, days, or weeks and make more deliberate spending decisions.">
+    <meta property="og:image"
+        content="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ea/66/5c/ea665c74-141b-1bee-cd27-5577f1ecfb74/Placeholder.mill/1200x630wa.jpg">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://pand0raq.dev/price-in-work-hours-calculator/">
+    <meta property="twitter:title" content="Price in Work Hours Calculator">
+    <meta property="twitter:description"
+        content="A simple cost in time calculator for turning purchases into hours of work.">
+    <meta property="twitter:image"
+        content="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ea/66/5c/ea665c74-141b-1bee-cd27-5577f1ecfb74/Placeholder.mill/1200x630wa.jpg">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebPage",
+                "@id": "https://pand0raq.dev/price-in-work-hours-calculator/#page",
+                "url": "https://pand0raq.dev/price-in-work-hours-calculator/",
+                "name": "Price in Work Hours Calculator",
+                "about": [
+                    "Price in work hours calculator",
+                    "Cost in time calculator",
+                    "Salary to hours purchase calculator"
+                ]
+            },
+            {
+                "@type": "SoftwareApplication",
+                "name": "Timecostify: Cost in Time",
+                "url": "https://pand0raq.dev/timecostify/",
+                "applicationCategory": "FinanceApplication",
+                "operatingSystem": "iOS",
+                "downloadUrl": "https://apps.apple.com/ge/app/timecostify-cost-in-time/id6748279661"
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://pand0raq.dev/price-in-work-hours-calculator/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "How do you convert a price into work hours?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Divide the purchase price by your hourly rate. If you are using a salary, convert that salary into an hourly rate first based on your typical weekly hours."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Why use a cost in time calculator?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "A cost in time calculator reframes spending decisions around effort instead of abstract money, which often makes trade-offs clearer."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Which app helps track these decisions over time?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Timecostify helps users go beyond one-off calculations by adding widgets, saved decisions, and spending history."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="../src/style.css">
+</head>
+
+<body>
+    <nav class="container animate-fade-in" style="padding-top: 2rem;">
+        <a href="/" class="text-muted" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+            &larr; Back to all apps
+        </a>
+    </nav>
+
+    <main id="app">
+        <header class="container page-hero text-center animate-fade-in">
+            <p class="kicker">Utility page for price-to-time search intent</p>
+            <h1>Price in work hours calculator</h1>
+            <p class="hero-copy">
+                Enter a price, your income, and your weekly hours to estimate how much of your life a purchase costs. If the framing helps, Timecostify turns that calculation into an everyday habit on iPhone.
+            </p>
+            <div class="cta-row">
+                <a href="/timecostify/" class="btn">See Timecostify</a>
+                <a href="https://apps.apple.com/ge/app/timecostify-cost-in-time/id6748279661" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Open App Store listing</a>
+            </div>
+        </header>
+
+        <section class="container section-shell animate-fade-in" style="animation-delay: 0.1s;">
+            <div class="glass-card calculator" data-time-cost-calculator>
+                <div class="section-heading" style="margin-bottom: 0;">
+                    <h2>Calculate the cost in time</h2>
+                    <p>This is the core mental model behind the app: make a purchase feel real by translating it into effort.</p>
+                </div>
+
+                <div class="calc-grid">
+                    <div class="calc-field">
+                        <label for="calculator-page-price">Purchase price</label>
+                        <input id="calculator-page-price" type="number" min="0" step="0.01" value="799" data-price />
+                    </div>
+                    <div class="calc-field">
+                        <label for="calculator-page-wage-type">Income type</label>
+                        <select id="calculator-page-wage-type" data-wage-type>
+                            <option value="hourly">Hourly pay</option>
+                            <option value="monthly">Monthly salary</option>
+                            <option value="yearly">Yearly salary</option>
+                        </select>
+                    </div>
+                    <div class="calc-field">
+                        <label for="calculator-page-wage">Income amount</label>
+                        <input id="calculator-page-wage" type="number" min="0" step="0.01" value="4800" data-wage />
+                    </div>
+                    <div class="calc-field">
+                        <label for="calculator-page-hours-week">Hours worked per week</label>
+                        <input id="calculator-page-hours-week" type="number" min="1" step="1" value="40" data-hours-week />
+                    </div>
+                </div>
+
+                <div class="calc-output-grid">
+                    <div class="calc-output">
+                        <span data-output-hours>--</span>
+                        <p>Work hours</p>
+                    </div>
+                    <div class="calc-output">
+                        <span data-output-days>--</span>
+                        <p>Eight-hour days</p>
+                    </div>
+                    <div class="calc-output">
+                        <span data-output-weeks>--</span>
+                        <p>Work weeks</p>
+                    </div>
+                </div>
+
+                <p class="calculator-note" data-output-status>Enter a price and income to estimate the work time behind a purchase.</p>
+            </div>
+        </section>
+
+        <section class="container section-shell animate-fade-in" style="animation-delay: 0.15s;">
+            <div class="section-heading">
+                <h2>Why people search for this</h2>
+                <p>Most people are not looking for financial theory. They are looking for a better question than "Can I technically afford this?"</p>
+            </div>
+
+            <div class="card-grid">
+                <div class="glass-card">
+                    <h3>Impulse purchases</h3>
+                    <p class="text-muted">A cost in time number makes small luxuries easier to evaluate before buying on autopilot.</p>
+                </div>
+                <div class="glass-card">
+                    <h3>Major purchases</h3>
+                    <p class="text-muted">Phones, subscriptions, travel, and upgrades feel different when translated into days or weeks of work.</p>
+                </div>
+                <div class="glass-card">
+                    <h3>Budgeting for real life</h3>
+                    <p class="text-muted">It is a useful lens even for people who dislike spreadsheets and traditional budgeting categories.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container section-shell animate-fade-in" style="animation-delay: 0.2s;">
+            <div class="section-heading">
+                <h2>How to calculate price in work hours</h2>
+                <p>The formula is simple. The habit is harder. That is why the app matters.</p>
+            </div>
+
+            <div class="glass-card">
+                <ul class="feature-list">
+                    <li>Start with the purchase price.</li>
+                    <li>Find your effective hourly rate. If you earn a salary, divide it into an hourly rate using weekly hours worked.</li>
+                    <li>Divide the price by the hourly rate to get work hours.</li>
+                    <li>Optionally convert the result into eight-hour days or work weeks to feel the scale more clearly.</li>
+                </ul>
+                <p style="margin-top: 1rem;" class="text-muted">Timecostify wraps this into a faster loop with widgets, saved decisions, charts, and multi-currency support.</p>
+            </div>
+        </section>
+
+        <section class="container section-shell animate-fade-in" style="animation-delay: 0.25s;">
+            <div class="section-heading">
+                <h2>Why use Timecostify after the calculation?</h2>
+                <p>The browser calculator handles the first question. The app handles the repeated behavior.</p>
+            </div>
+
+            <div class="card-grid">
+                <div class="glass-card">
+                    <h3>Widget-based decisions</h3>
+                    <p class="text-muted">Check a price and record buy or do not buy directly from the Home Screen.</p>
+                </div>
+                <div class="glass-card">
+                    <h3>Saved history</h3>
+                    <p class="text-muted">Look back at choices and see how much time you protected by skipping purchases.</p>
+                </div>
+                <div class="glass-card">
+                    <h3>Flexible inputs</h3>
+                    <p class="text-muted">Support for different income types, work schedules, household math, and currencies makes the tool usable in everyday life.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container section-shell animate-fade-in" style="animation-delay: 0.3s;">
+            <div class="section-heading">
+                <h2>Frequently asked questions</h2>
+                <p>These are the common follow-up questions behind this search intent.</p>
+            </div>
+
+            <div class="faq-grid">
+                <div class="glass-card faq-item">
+                    <h3>What is a good example of price in work hours?</h3>
+                    <p>If you earn $25 per hour, a $200 purchase costs 8 hours of work. That is one full workday.</p>
+                </div>
+                <div class="glass-card faq-item">
+                    <h3>Can this help with lifestyle inflation?</h3>
+                    <p>Yes. Converting purchases into work time makes it easier to notice when convenience spending quietly grows.</p>
+                </div>
+                <div class="glass-card faq-item">
+                    <h3>What if I do not work a standard 40-hour week?</h3>
+                    <p>Use your real weekly hours. The more accurate your weekly schedule, the more useful the result.</p>
+                </div>
+                <div class="glass-card faq-item">
+                    <h3>Where is the full app page?</h3>
+                    <p><a href="/timecostify/" class="text-link">The Timecostify product page</a> covers screenshots, features, support, and the App Store link.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="container app-footer">
+        <div class="app-footer-links">
+            <a href="/timecostify/">App page</a>
+            <a href="/timecostifysupport/">Support</a>
+            <a href="/timecostifyprivacypolicy/">Privacy Policy</a>
+        </div>
+        <p>&copy; 2026 Halik Magomedov. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

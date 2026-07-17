@@ -138,11 +138,20 @@ function auditHtmlPage(pageName, relativePath) {
     }
 }
 
+// Audit homepage
+auditHtmlPage('Homepage', '.');
+
 // Audit Couplestatus page
 auditHtmlPage('Couple Status', 'couplestatus');
 
 // Audit Timecostify page
 auditHtmlPage('Timecostify', 'timecostify');
+
+// Audit search-intent landing pages
+auditHtmlPage('Couples Mood Tracker Widget', 'couples-mood-tracker-widget');
+auditHtmlPage('Long-Distance Couple App', 'long-distance-couple-app');
+auditHtmlPage('Partner Availability App', 'partner-availability-app');
+auditHtmlPage('Price in Work Hours Calculator', 'price-in-work-hours-calculator');
 
 console.log('\n===================================================');
 console.log(` Audit Complete: ${passes} Checks Passed, ${issuesFound} Suggestions/Issues.`);

@@ -27,6 +27,7 @@ export default defineConfig({
                 costimePrivacyAppstore: resolve(__dirname, 'costimeprivacypolicy/index.html'),
                 costimePrivacyFooter: resolve(__dirname, 'timecostyprivacypolicy/index.html'),
                 costimeTerms: resolve(__dirname, 'costimeterms/index.html'),
+                priceInWorkHoursCalculator: resolve(__dirname, 'price-in-work-hours-calculator/index.html'),
 
                 pottyDog: resolve(__dirname, 'pottydog/index.html'),
                 pottyDogSupport: resolve(__dirname, 'pottydogsupport/index.html'),
@@ -37,6 +38,9 @@ export default defineConfig({
                 coupleStatusSupport: resolve(__dirname, 'couplestatussupport/index.html'),
                 coupleStatusPrivacy: resolve(__dirname, 'couplestatusprivacypolicy/index.html'),
                 coupleStatusTerms: resolve(__dirname, 'couplestatusterms/index.html'),
+                couplesMoodTrackerWidget: resolve(__dirname, 'couples-mood-tracker-widget/index.html'),
+                longDistanceCoupleApp: resolve(__dirname, 'long-distance-couple-app/index.html'),
+                partnerAvailabilityApp: resolve(__dirname, 'partner-availability-app/index.html'),
             },
         },
     },

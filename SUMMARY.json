@@ -1,0 +1,38 @@
+{
+  "audited_at": "2026-07-13T00:00:00Z",
+  "scope": "local production build",
+  "domain": "pand0raq.dev",
+  "overall_score": 78,
+  "technical_seo_checks": {
+    "passed": 40,
+    "failed": 0
+  },
+  "asset_summary": {
+    "homepage_html_kb": 10.71,
+    "homepage_html_gzip_kb": 2.99,
+    "main_css_kb": 7.19,
+    "main_css_gzip_kb": 2.19,
+    "main_js_kb": 2.83,
+    "main_js_gzip_kb": 1.24
+  },
+  "largest_page_image_payloads": {
+    "pottydog_mb": 8.3,
+    "breathepulse_mb": 3.41,
+    "timecostify_mb": 1.99,
+    "couplestatus_mb": 0.24
+  },
+  "top_issues": [
+    "Oversized PNG screenshots on secondary app pages",
+    "No lazy loading on screenshot galleries",
+    "No explicit aspect-ratio reservation for screenshot frames",
+    "Render-blocking Google Fonts on the homepage",
+    "Off-origin app icons increase connection overhead"
+  ],
+  "next_actions": [
+    "Convert screenshots to AVIF or WebP",
+    "Add loading=\"lazy\" and decoding=\"async\" to below-the-fold images",
+    "Reserve screenshot dimensions with width/height or aspect-ratio",
+    "Localize fonts or switch to a system stack",
+    "Serve key icons from the same origin"
+  ]
+}

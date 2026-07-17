@@ -23,6 +23,9 @@ Daily routines can slowly turn relationships into roommate mode. Logistics texts
 
 ### URLs
 *   Landing Page: https://pand0raq.dev/couplestatus/
+*   Search Intent Guide: https://pand0raq.dev/couples-mood-tracker-widget/
+*   Search Intent Guide: https://pand0raq.dev/long-distance-couple-app/
+*   Search Intent Guide: https://pand0raq.dev/partner-availability-app/
 *   Privacy Policy: https://pand0raq.dev/couplestatusprivacypolicy/
 *   Terms: https://pand0raq.dev/couplestatusterms/
 *   Support: https://pand0raq.dev/couplestatussupport/
@@ -48,6 +51,7 @@ A cognitive reframing tool for personal finance. Instead of evaluating price tag
 
 ### URLs
 *   Landing Page: https://pand0raq.dev/timecostify/
+*   Search Intent Guide: https://pand0raq.dev/price-in-work-hours-calculator/
 *   Privacy Policy: https://pand0raq.dev/timecostifyprivacypolicy/
 *   Terms: https://pand0raq.dev/costimeterms/
 *   Support: https://pand0raq.dev/timecostifysupport/
