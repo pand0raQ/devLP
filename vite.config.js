@@ -41,6 +41,7 @@ export default defineConfig({
                 couplesMoodTrackerWidget: resolve(__dirname, 'couples-mood-tracker-widget/index.html'),
                 longDistanceCoupleApp: resolve(__dirname, 'long-distance-couple-app/index.html'),
                 partnerAvailabilityApp: resolve(__dirname, 'partner-availability-app/index.html'),
+                appsForAutisticCouples: resolve(__dirname, 'apps-for-autistic-couples/index.html'),
             },
         },
     },

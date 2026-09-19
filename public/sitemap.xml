@@ -50,6 +50,11 @@
     <changefreq>weekly</changefreq>
     <priority>0.84</priority>
   </url>
+  <url>
+    <loc>https://pand0raq.dev/apps-for-autistic-couples/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.88</priority>
+  </url>
   <!-- Support & Policies for search discovery -->
   <url>
     <loc>https://pand0raq.dev/couplestatussupport/</loc>

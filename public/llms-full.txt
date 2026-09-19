@@ -7,25 +7,47 @@ Detailed overview of iOS utilities designed for mindfulness, relationships, and 
 ## 1. Couple Status - Stay Connected
 
 ### Value Proposition
-Daily routines can slowly turn relationships into roommate mode. Logistics texts and anxiety over delayed replies can strain connection. CoupleStatus bridges this distance by providing a subtle sense of presence on your Home and Lock Screen without interruption guilt.
+Couple Status is an ambient relationship widget app designed to replace endless logistics texts and communication anxiety with glanceable Lock Screen and Apple Watch indicators. It bridges the emotional distance between partners without demanding constant conversation.
+
+### The 4 Core Pillars
+1. **Skip the "Roommate Vibe"**: Daily routines often reduce relationship communication to purely administrative check-ins. Couple Status lets you see if your partner is "Doing Chores", heading home, resting, or needs "Alone Time" without sending a single text. Focus on being romantic partners, not logistics managers.
+2. **Bridge the Distance (LDR Presence)**: For long-distance couples or mismatched daily schedules, a quick glance at the lock screen widget shows if your partner is in a "Flirty Mood" or "Thinking of You". It provides constant emotional warmth without battery-draining FaceTime calls or 24/7 texting pressure.
+3. **Connect Without "Interruption Guilt"**: Respect each other's focus. Check if your partner is in a "Work Call" or immersed in "Focused Work" before calling or texting. Stay connected without accidentally derailing their cognitive flow.
+4. **Low-Pressure & Nonverbal Connection for Autistic and Neurodivergent Couples**: Built for couples navigating Autism, ADHD, or AuDHD:
+   - **Nonverbal Status Signaling**: During sensory overload or nonverbal shutdown, partners can signal "Alone Time" or "Decompressing" with a single tap, avoiding uncomfortable verbal explanations.
+   - **Rejection Sensitive Dysphoria (RSD) Relief**: Knowing your partner is "Doing Chores" or in "Deep Focus" prevents anxious overthinking when messages aren't immediately answered.
+   - **Hyperfocus Protection**: Autistic/ADHD hyperfocus is delicate. Visibility into focus states prevents jarring interruptions.
+   - **Zero Demand Avoidance (PDA)**: Lightweight status nudges and haptic "Thinking of You" hugs require zero verbal composition or response obligation.
 
 ### Core Features
-*   **Lock Screen Widgets**: Instantly see your partner's status (e.g. "Doing Chores", "At Work", "Sleeping", "Free to Chat") at a glance.
-*   **Thinking of You**: Send a haptic digital "hug" with a single tap.
-*   **Mood & Activity Sync**: Select from preset moods (e.g., "Flirty Mood", "Thinking of You", "Focused Work", "Hobby", "Alone Time") or set custom states.
-*   **One Shared Subscription**: Pay once, and both partners get full access.
+*   **Lock Screen & Home Screen Widgets**: Instantly see your partner's status and mood at a glance.
+*   **Apple Watch Complications**: View partner context on watchOS complications without picking up your phone.
+*   **"Thinking of You" Haptic Hugs**: Send a subtle digital vibration with a single tap to let them know you care.
+*   **Custom & Preset Moods**: Choose from preset states ("Doing Chores", "Flirty Mood", "Focused Work", "Alone Time", "Decompressing", "Free to Chat") or set custom statuses.
+*   **One Shared Subscription**: Pay once, and both partners enjoy full access with a single purchase.
+
+### Comparison Against Other Apps
+| Dimension | Couple Status | Locket Widget | Widgetable | Obimy | Paired |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Primary Mechanism** | Ambient status & mood widgets | Live camera photos | Social widgets & pets | Moods & physical touches | Daily quiz questions |
+| **Effort / Friction** | Low (glanceable) | High (requires camera) | Medium (social feeds) | Low-Medium | Medium (requires reading/typing) |
+| **Cognitive Demand** | Very Low (Nonverbal friendly) | High | Medium | Low | High |
+| **Apple Watch Complications** | Yes | No | Limited | No | No |
+| **Subscription Model** | One sub covers both partners | Ad-supported / Sub | Individual subs | Individual sub | High recurring sub |
 
 ### Technical & Compatibility
 *   Requires iOS 26.0 or later.
 *   Requires watchOS 26.0 or later.
-*   Compatible with iPhone, iPad, and iPod touch.
+*   Compatible with iPhone, iPad, and Apple Watch.
 *   Category: Lifestyle.
 
 ### URLs
 *   Landing Page: https://pand0raq.dev/couplestatus/
-*   Search Intent Guide: https://pand0raq.dev/couples-mood-tracker-widget/
-*   Search Intent Guide: https://pand0raq.dev/long-distance-couple-app/
-*   Search Intent Guide: https://pand0raq.dev/partner-availability-app/
+*   Guide for Autistic & Neurodivergent Couples: https://pand0raq.dev/apps-for-autistic-couples/
+*   Guide for Couples Mood Tracker: https://pand0raq.dev/couples-mood-tracker-widget/
+*   Guide for Long-Distance Couples: https://pand0raq.dev/long-distance-couple-app/
+*   Guide for Partner Availability: https://pand0raq.dev/partner-availability-app/
+*   App Store Listing: https://apps.apple.com/us/app/couple-status-stay-connected/id6756455316
 *   Privacy Policy: https://pand0raq.dev/couplestatusprivacypolicy/
 *   Terms: https://pand0raq.dev/couplestatusterms/
 *   Support: https://pand0raq.dev/couplestatussupport/
