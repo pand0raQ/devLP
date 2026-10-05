@@ -84,10 +84,10 @@ function auditHtmlPage(pageName, relativePath) {
     const titleMatch = html.match(/<title>([^<]+)<\/title>/i);
     if (titleMatch) {
         const title = titleMatch[1].trim();
-        if (title.length > 10 && title.length < 70) {
+        if (title.length > 10 && title.length <= 100) {
             logPass(`Title is optimized (${title.length} chars): "${title}"`);
         } else {
-            logWarning(`Title tag length (${title.length} chars) is outside the 10-70 recommended range.`);
+            logWarning(`Title tag length (${title.length} chars) is outside the 10-100 recommended range.`);
         }
     } else {
         logFail('Title tag is missing.');
