@@ -1119,8 +1119,8 @@
                     },
                     customData: {
                         // Crucial: Adapty Paddle Integration maps 'customer_user_id' directly to customer profile
-                        customer_user_id: effectiveCustomerId,
-                        app_user_id: effectiveCustomerId,
+                        customer_user_id: effectiveCustomerId || email,
+                        app_user_id: effectiveCustomerId || email,
                         couple_id: prefillCoupleId || '',
                         user_id: prefillUserId || '',
                         couple_code: prefillCoupleCode || '',
