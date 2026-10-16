@@ -955,18 +955,60 @@
 
         let currentPlan = 'annual';
         let paddleInitialized = false;
+        let detectedCountry = '';
 
-        // Auto-fill query parameters (?email=...&user_id=...&couple_id=...&code=...)
+        // Auto-fill query parameters (?email=...&user_id=...&couple_id=...&code=...&country=...)
         const urlParams = new URLSearchParams(window.location.search);
         const prefillEmail = urlParams.get('email');
         const prefillUserId = urlParams.get('user_id');
         const prefillCoupleId = urlParams.get('couple_id');
         const prefillCoupleCode = urlParams.get('code');
-        const effectiveCustomerId = prefillCoupleId || prefillUserId || '';
+        const paramCountry = urlParams.get('country');
+
+        if (paramCountry && paramCountry.length === 2) {
+            detectedCountry = paramCountry.toUpperCase();
+        }
 
         if (prefillEmail) {
             const emailInput = document.getElementById('customer-email');
             if (emailInput) emailInput.value = prefillEmail;
+        }
+
+        // Detect user country from app param or browser environment
+        async function getCountry() {
+            if (detectedCountry && detectedCountry.length === 2) {
+                return detectedCountry;
+            }
+
+            // 1. Try quick IP-based country lookup with a 1.2s timeout
+            try {
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 1200);
+                const res = await fetch('https://api.country.is', { signal: controller.signal });
+                clearTimeout(timeoutId);
+                if (res.ok) {
+                    const data = await res.json();
+                    if (data && data.country && data.country.length === 2) {
+                        detectedCountry = data.country.toUpperCase();
+                        return detectedCountry;
+                    }
+                }
+            } catch (e) {
+                // Fallback to browser locale
+            }
+
+            // 2. Fallback to browser navigator locale (e.g., 'en-US' -> 'US')
+            try {
+                const lang = navigator.language || (navigator.languages && navigator.languages[0]) || '';
+                const parts = lang.split(/[-_]/);
+                if (parts.length > 1 && parts[1].length === 2) {
+                    detectedCountry = parts[1].toUpperCase();
+                    return detectedCountry;
+                }
+            } catch (e) {}
+
+            detectedCountry = 'US'; // Default fallback
+            return detectedCountry;
         }
 
         // Live Countdown Timer in Top Bar
@@ -1049,7 +1091,7 @@
                                 couple_id: prefillCoupleId || '',
                                 user_id: prefillUserId || '',
                                 code: prefillCoupleCode || '',
-                                customer_user_id: effectiveCustomerId
+                                country: detectedCountry || 'US'
                             });
                             window.location.href = `/couplestatus/android/success/?${successParams.toString()}`;
                         }
@@ -1062,8 +1104,8 @@
             }
         }
 
-        // Trigger Paddle Checkout
-        function startPaddleCheckout() {
+        // Trigger Paddle Checkout with Country and Firebase Custom Data
+        async function startPaddleCheckout() {
             const emailInput = document.getElementById('customer-email');
             const email = emailInput ? emailInput.value.trim() : '';
 
@@ -1082,6 +1124,9 @@
             document.getElementById('checkout-container-wrapper').style.display = 'block';
             document.getElementById('paddle-spinner').style.display = 'flex';
 
+            // Resolve country (from app param or browser)
+            const countryCode = await getCountry();
+
             const priceId = PADDLE_CONFIG.prices[currentPlan] || PADDLE_CONFIG.prices.annual;
             const successRedirectParams = new URLSearchParams({
                 email: email,
@@ -1089,14 +1134,9 @@
                 couple_id: prefillCoupleId || '',
                 user_id: prefillUserId || '',
                 code: prefillCoupleCode || '',
-                customer_user_id: effectiveCustomerId
+                country: countryCode
             });
             const successUrl = `${window.location.origin}/couplestatus/android/success/?${successRedirectParams.toString()}`;
-
-            // Optional Adapty click ID for attribution
-            const adptClickId = (window.adaptyPixel && typeof window.adaptyPixel.getClickId === 'function')
-                ? window.adaptyPixel.getClickId()
-                : '';
 
             try {
                 Paddle.Checkout.open({
@@ -1115,18 +1155,19 @@
                         }
                     ],
                     customer: {
-                        email: email
+                        email: email,
+                        address: countryCode ? {
+                            countryCode: countryCode
+                        } : undefined
                     },
                     customData: {
-                        // Crucial: Adapty Paddle Integration maps 'customer_user_id' directly to customer profile
-                        customer_user_id: effectiveCustomerId || email,
-                        app_user_id: effectiveCustomerId || email,
+                        // Native Firebase Cloud Functions integration (couple_id, user_id)
                         couple_id: prefillCoupleId || '',
                         user_id: prefillUserId || '',
                         couple_code: prefillCoupleCode || '',
-                        adpt_click_id: adptClickId,
-                        platform: 'android_web_funnel',
-                        source: 'couplestatus_android_landing',
+                        email: email,
+                        platform: 'android',
+                        country: countryCode,
                         plan_type: currentPlan,
                         client_timestamp: new Date().toISOString()
                     }
@@ -1147,9 +1188,10 @@
             document.getElementById('email-step').style.display = 'block';
         }
 
-        // Initialize Paddle as soon as window loads
+        // Initialize Paddle and resolve country as soon as window loads
         window.addEventListener('load', () => {
             initPaddle();
+            getCountry();
         });
     </script>
 </body>
