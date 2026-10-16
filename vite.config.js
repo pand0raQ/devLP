@@ -35,6 +35,8 @@ export default defineConfig({
                 pottyDogTerms: resolve(__dirname, 'pottydogterms/index.html'),
 
                 coupleStatus: resolve(__dirname, 'couplestatus/index.html'),
+                coupleStatusAndroid: resolve(__dirname, 'couplestatus/android/index.html'),
+                coupleStatusAndroidSuccess: resolve(__dirname, 'couplestatus/android/success/index.html'),
                 coupleStatusSupport: resolve(__dirname, 'couplestatussupport/index.html'),
                 coupleStatusPrivacy: resolve(__dirname, 'couplestatusprivacypolicy/index.html'),
                 coupleStatusTerms: resolve(__dirname, 'couplestatusterms/index.html'),

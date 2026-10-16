@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment Successful | Activate Couple Status on Android</title>
+    <meta name="robots" content="noindex,nofollow" />
+    <link rel="stylesheet" href="../../../src/style.css">
+
+    <style>
+        .success-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem 2rem;
+            max-width: 720px;
+            margin: 2rem auto;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .activation-method {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .activation-method.primary {
+            background: rgba(244, 63, 94, 0.08);
+            border-color: rgba(244, 63, 94, 0.35);
+        }
+
+        .code-display {
+            background: #020617;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 14px;
+            font-family: monospace;
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #3ddc84;
+            padding: 0.85rem 1.25rem;
+            letter-spacing: 0.15em;
+            text-align: center;
+            user-select: all;
+        }
+
+        .btn-copy {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #fff;
+            padding: 0.85rem 1.5rem;
+            border-radius: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-copy:hover {
+            background: rgba(255, 255, 255, 0.18);
+        }
+
+        .badge-android {
+            background: rgba(61, 220, 132, 0.15);
+            color: #3ddc84;
+            padding: 0.2rem 0.6rem;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="container" style="padding-top: 2rem;">
+        <a href="/couplestatus/android/" class="text-muted" style="font-size: 0.9rem;">
+            &larr; Back to Android store
+        </a>
+    </nav>
+
+    <main class="container text-center" style="padding: 2rem 0 4rem;">
+        <!-- Celebratory Icon -->
+        <div style="width: 80px; height: 80px; background: rgba(61, 220, 132, 0.15); border: 2px solid rgba(61, 220, 132, 0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; margin: 0 auto 1.25rem;">
+            🎉
+        </div>
+
+        <h1 style="font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; margin-bottom: 0.75rem;">
+            Payment Successful!
+        </h1>
+        <p class="hero-copy" style="max-width: 600px; margin: 0 auto 1.5rem;">
+            Your Couple Status Pro entitlement is active and ready to unlock for <strong>BOTH</strong> you and your partner.
+        </p>
+
+        <!-- Order Summary Box -->
+        <div style="display: inline-flex; align-items: center; gap: 1rem; background: rgba(0, 0, 0, 0.3); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 999px; padding: 0.5rem 1.25rem; font-size: 0.88rem; margin-bottom: 2rem;">
+            <span class="text-muted">Linked Account:</span>
+            <strong id="summary-email" style="color: #fff;">user@example.com</strong>
+            <span style="color: rgba(255, 255, 255, 0.2);">|</span>
+            <span class="badge-android" id="summary-plan">ANNUAL PASS</span>
+        </div>
+
+        <!-- Activation Card -->
+        <div class="success-card">
+            <h2 style="font-size: 1.6rem; margin-bottom: 0.5rem; text-align: left;">
+                📱 Step 1: Unlock On Your Android Phone
+            </h2>
+            <p class="text-muted" style="text-align: left; font-size: 0.95rem; margin-bottom: 1.5rem;">
+                Choose whichever activation method is easiest for you:
+            </p>
+
+            <!-- METHOD 1: 1-Tap Deep Link -->
+            <div class="activation-method primary">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                    <span style="font-size: 0.75rem; text-transform: uppercase; font-weight: 800; color: #f43f5e;">
+                        ⚡️ Recommended: 1-Tap App Link
+                    </span>
+                    <span id="android-device-tag" style="display: none;" class="badge-android">
+                        Android Phone Detected
+                    </span>
+                </div>
+                <h3 style="font-size: 1.15rem; margin-bottom: 0.4rem;">Tap To Open App Instantly</h3>
+                <p class="text-muted" style="font-size: 0.88rem; margin-bottom: 1rem;">
+                    If you are currently browsing on your Android smartphone, tap the button below to instantly launch Couple Status and unlock Pro features automatically.
+                </p>
+
+                <a id="btn-deep-link" href="couplestatus://activate" class="btn"
+                    style="width: 100%; padding: 1.1rem; font-size: 1.05rem; background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);">
+                    📲 Open in Android App & Unlock Pro
+                </a>
+            </div>
+
+            <!-- METHOD 2: Manual 6-Digit License Code -->
+            <div class="activation-method">
+                <span style="font-size: 0.75rem; text-transform: uppercase; font-weight: 800; color: var(--color-text-muted); display: block; margin-bottom: 0.5rem;">
+                    🔑 Method 2: Manual Pro Activation Key
+                </span>
+                <p class="text-muted" style="font-size: 0.88rem; margin-bottom: 0.85rem;">
+                    Bought from your laptop or PC? Open Couple Status on Android, tap <strong>Settings &rarr; Enter Pro Code</strong>, and enter:
+                </p>
+
+                <div style="display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap;">
+                    <div class="code-display" id="license-code-box" style="flex: 1; min-width: 180px;">
+                        STATUS-8492
+                    </div>
+                    <button type="button" class="btn-copy" id="btn-copy-code" onclick="copyLicenseCode()">
+                        Copy Code
+                    </button>
+                </div>
+            </div>
+
+            <!-- STEP 2: Partner Sharing -->
+            <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 1.75rem; text-align: left;">
+                <h2 style="font-size: 1.35rem; margin-bottom: 0.5rem;">
+                    💑 Step 2: Unlock For Your Partner (Free Included)
+                </h2>
+                <p class="text-muted" style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem;">
+                    Your subscription covers both of you! Simply share your activation code (<strong id="partner-code-text" style="color: #3ddc84;">STATUS-8492</strong>) with your partner. Once they enter it on their phone, they will immediately be connected to your Pro account.
+                </p>
+
+                <button type="button" class="btn btn-secondary" onclick="shareWithPartner()" style="width: 100%; padding: 0.9rem;">
+                    💌 Share Activation Code with Partner
+                </button>
+            </div>
+
+            <!-- App Store fallback -->
+            <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid rgba(255, 255, 255, 0.08); font-size: 0.85rem; color: var(--color-text-muted); text-align: center;">
+                Don't have the app installed yet?
+                <a href="https://play.google.com/store/apps/details?id=com.bumblebee.couplestatus" target="_blank" rel="noopener noreferrer" style="color: #3ddc84; font-weight: 700; text-decoration: underline; margin-left: 0.25rem;">
+                    Download Couple Status on Google Play &rarr;
+                </a>
+            </div>
+        </div>
+
+        <p class="text-muted" style="font-size: 0.82rem; margin-top: 1.5rem;">
+            Receipt and activation details have also been sent to your email. Need help? Contact <a href="mailto:support@pand0raq.dev" class="text-link">support@pand0raq.dev</a>.
+        </p>
+    </main>
+
+    <footer class="container app-footer">
+        <p>&copy; 2026 Abdukhalik Magomedov (pand0raq.dev). Processed securely via Paddle.com.</p>
+    </footer>
+
+    <script>
+        // Parse URL params
+        const urlParams = new URLSearchParams(window.location.search);
+        const email = urlParams.get('email') || 'your email';
+        const plan = urlParams.get('plan') || 'annual';
+        const checkoutId = urlParams.get('checkout_id') || '';
+        const coupleId = urlParams.get('couple_id') || '';
+        const userId = urlParams.get('user_id') || '';
+        const passedCode = urlParams.get('code') || '';
+        const customerUserId = urlParams.get('customer_user_id') || coupleId || userId || '';
+
+        // Generate/display deterministic code for immediate client presentation
+        let code = passedCode || ('STATUS-' + Math.floor(1000 + Math.random() * 9000));
+        const token = 'act_' + Math.random().toString(36).substring(2, 15);
+
+        document.getElementById('summary-email').textContent = email;
+        document.getElementById('summary-plan').textContent = plan.toUpperCase() + ' PASS';
+        document.getElementById('license-code-box').textContent = code;
+        document.getElementById('partner-code-text').textContent = code;
+
+        // Device detection
+        const isAndroid = /android/i.test(navigator.userAgent);
+        if (isAndroid) {
+            const tag = document.getElementById('android-device-tag');
+            if (tag) tag.style.display = 'inline-block';
+        }
+
+        // Deep link URLs pointing directly to com.bumblebee.couplestatus
+        const deepLinkQuery = new URLSearchParams({
+            email: email,
+            token: token,
+            code: code,
+            couple_id: coupleId,
+            user_id: userId,
+            customer_user_id: customerUserId,
+            checkout_id: checkoutId,
+            plan: plan
+        }).toString();
+
+        const customSchemeUrl = `couplestatus://activate?${deepLinkQuery}`;
+        const intentUrl = `intent://activate?${deepLinkQuery}#Intent;scheme=couplestatus;package=com.bumblebee.couplestatus;end;`;
+
+        const deepLinkBtn = document.getElementById('btn-deep-link');
+        if (deepLinkBtn) {
+            deepLinkBtn.href = isAndroid ? intentUrl : customSchemeUrl;
+        }
+
+        // Copy Code Functionality
+        function copyLicenseCode() {
+            navigator.clipboard.writeText(code).then(() => {
+                const btn = document.getElementById('btn-copy-code');
+                btn.textContent = 'Copied! ✓';
+                btn.style.color = '#3ddc84';
+                setTimeout(() => {
+                    btn.textContent = 'Copy Code';
+                    btn.style.color = '#fff';
+                }, 2500);
+            });
+        }
+
+        // Share with partner via Web Share API
+        function shareWithPartner() {
+            const shareText = `Hey! I just unlocked Couple Status Pro for both of us! 💕\n\nDownload the app on Google Play and enter this Pro Activation Code: ${code}\n\nApp link: https://pand0raq.dev/couplestatus/android/`;
+
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Couple Status Pro Activation Key',
+                    text: shareText
+                }).catch(() => {});
+            } else {
+                navigator.clipboard.writeText(shareText).then(() => {
+                    alert('Partner invite message copied to clipboard! Paste it to your partner in WhatsApp, Telegram, or SMS.');
+                });
+            }
+        }
+    </script>
+</body>
+
+</html>
