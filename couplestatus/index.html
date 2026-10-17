@@ -208,237 +208,1363 @@
     </script>
 
     <link rel="stylesheet" href="../src/style.css">
+
+    <style>
+        /* Scoped Design System for Couple Status - Warm, Romantic & Apple-Grade */
+        :root {
+            --cs-rose: #f43f5e;
+            --cs-rose-glow: rgba(244, 63, 94, 0.28);
+            --cs-coral: #fb923c;
+            --cs-coral-glow: rgba(251, 146, 60, 0.22);
+            --cs-violet: #a855f7;
+            --cs-violet-glow: rgba(168, 85, 247, 0.24);
+            --cs-mint: #34d399;
+            --cs-mint-glow: rgba(52, 211, 153, 0.25);
+            --cs-blue: #3b82f6;
+            --cs-blue-glow: rgba(59, 130, 246, 0.25);
+            --cs-salmon: #ff6b6b;
+            --cs-salmon-glow: rgba(255, 107, 107, 0.28);
+            
+            --cs-bg-mesh: radial-gradient(circle at 18% 12%, rgba(244, 63, 94, 0.16) 0%, transparent 40%),
+                          radial-gradient(circle at 82% 16%, rgba(168, 85, 247, 0.14) 0%, transparent 42%),
+                          radial-gradient(circle at 50% 50%, rgba(251, 146, 60, 0.08) 0%, transparent 55%),
+                          linear-gradient(180deg, #090b12 0%, #0d111d 50%, #080a10 100%);
+            --cs-card-glass: rgba(18, 24, 38, 0.65);
+            --cs-card-border: rgba(255, 255, 255, 0.09);
+            --cs-card-border-hover: rgba(244, 63, 94, 0.35);
+        }
+
+        body {
+            background: var(--cs-bg-mesh) !important;
+            color: #f1f5f9;
+            overflow-x: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", sans-serif;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Top Bar */
+        .cs-top-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem 0 1rem;
+            font-size: 0.9rem;
+        }
+        .cs-back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #94a3b8;
+            font-weight: 500;
+            padding: 0.4rem 0.8rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.2s ease;
+        }
+        .cs-back-link:hover {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateX(-2px);
+        }
+        .cs-version-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.75rem;
+            border-radius: 999px;
+            background: rgba(244, 63, 94, 0.1);
+            border: 1px solid rgba(244, 63, 94, 0.25);
+            color: #fca5a5;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        .cs-version-tag .pulse-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #f43f5e;
+            box-shadow: 0 0 8px #f43f5e;
+            animation: pulseDot 2s infinite ease-in-out;
+        }
+        @keyframes pulseDot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(0.85); }
+        }
+
+        /* Hero Typography & Glow */
+        .cs-hero {
+            padding: 2.5rem 0 3.5rem;
+            position: relative;
+        }
+        .cs-badge-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1.1rem;
+            border-radius: 999px;
+            background: linear-gradient(90deg, rgba(244, 63, 94, 0.14) 0%, rgba(168, 85, 247, 0.14) 100%);
+            border: 1px solid rgba(244, 63, 94, 0.3);
+            color: #ffd2dc;
+            font-size: 0.88rem;
+            font-weight: 600;
+            letter-spacing: 0.01em;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(244, 63, 94, 0.15);
+        }
+        .cs-app-icon-wrap {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+        .cs-app-icon-wrap::after {
+            content: "";
+            position: absolute;
+            inset: -8px;
+            background: radial-gradient(circle, rgba(244, 63, 94, 0.45) 0%, transparent 70%);
+            border-radius: 32px;
+            z-index: -1;
+            filter: blur(14px);
+        }
+        .cs-app-icon {
+            width: 104px;
+            height: 104px;
+            border-radius: 24px;
+            box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.15);
+            display: block;
+            margin: 0 auto;
+            object-fit: cover;
+        }
+
+        .hero-title {
+            font-size: clamp(2.4rem, 5.5vw, 4.2rem) !important;
+            font-weight: 800 !important;
+            line-height: 1.08 !important;
+            letter-spacing: -0.035em !important;
+            margin: 0.75rem auto 1.25rem !important;
+            max-width: 900px;
+            color: #ffffff;
+            text-wrap: balance;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #ffffff 20%, #fecdd3 50%, #f43f5e 90%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+        .hero-subtitle {
+            font-size: clamp(1.08rem, 2vw, 1.3rem);
+            color: #cbd5e1;
+            max-width: 720px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+            font-weight: 400;
+            text-wrap: pretty;
+        }
+
+        /* Apple App Store & Action Buttons */
+        .cs-cta-group {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .btn-appstore {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.85rem;
+            padding: 0.85rem 1.75rem;
+            background: #ffffff;
+            color: #000000 !important;
+            border-radius: 18px;
+            font-weight: 600;
+            box-shadow: 0 12px 30px -6px rgba(255, 255, 255, 0.28), 0 0 0 1px rgba(255, 255, 255, 0.9);
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            text-decoration: none;
+        }
+        .btn-appstore:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 18px 40px -6px rgba(255, 255, 255, 0.4);
+            color: #000000 !important;
+        }
+        .btn-appstore:active {
+            transform: scale(0.96);
+        }
+        .btn-appstore svg {
+            width: 28px;
+            height: 28px;
+            fill: currentColor;
+            flex-shrink: 0;
+        }
+        .btn-appstore-text {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            line-height: 1.15;
+        }
+        .btn-appstore-sub {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #475569;
+            font-weight: 600;
+        }
+        .btn-appstore-main {
+            font-size: 1.22rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .btn-android-pass {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.65rem;
+            padding: 0.95rem 1.5rem;
+            background: rgba(255, 255, 255, 0.06);
+            color: #f1f5f9;
+            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(14px);
+            font-weight: 600;
+            font-size: 0.98rem;
+            transition: all 0.2s ease;
+        }
+        .btn-android-pass:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.25);
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+        .btn-android-pass:active {
+            transform: scale(0.96);
+        }
+
+        .cs-trust-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            font-size: 0.88rem;
+            color: #94a3b8;
+        }
+        .cs-trust-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+        }
+        .cs-trust-item svg {
+            width: 16px;
+            height: 16px;
+            color: #f43f5e;
+        }
+
+        /* -------------------------------------------------------------
+           INTERACTIVE SIMULATOR (The Showstopper Experience)
+        ------------------------------------------------------------- */
+        .simulator-section {
+            margin: 2rem 0 5rem;
+        }
+        .simulator-card {
+            background: rgba(15, 20, 32, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 32px;
+            padding: 2.25rem;
+            box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .simulator-header {
+            text-align: center;
+            max-width: 680px;
+            margin: 0 auto 2rem;
+        }
+        .simulator-header h2 {
+            font-size: clamp(1.6rem, 3.2vw, 2.3rem);
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+        }
+        .simulator-header p {
+            color: #94a3b8;
+            font-size: 1rem;
+        }
+
+        .simulator-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            align-items: center;
+        }
+        @media (max-width: 900px) {
+            .simulator-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Left side: The 12-Status Board */
+        .status-board-panel {
+            background: rgba(10, 14, 24, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 26px;
+            padding: 1.5rem;
+        }
+        .board-controls-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        }
+        .board-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #f1f5f9;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .board-hint {
+            font-size: 0.78rem;
+            color: #f43f5e;
+            font-weight: 600;
+        }
+
+        .status-grid-4x3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.65rem;
+        }
+        .status-btn {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 0.75rem 0.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            color: #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            user-select: none;
+        }
+        .status-btn:hover {
+            background: rgba(255, 255, 255, 0.09);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        .status-btn:active {
+            transform: scale(0.96);
+        }
+        .status-btn.active {
+            background: var(--active-tint-bg, rgba(244, 63, 94, 0.18));
+            border-color: var(--active-tint, #f43f5e);
+            color: #ffffff;
+            box-shadow: 0 0 20px var(--active-tint-glow, rgba(244, 63, 94, 0.3));
+        }
+        .status-icon {
+            font-size: 1.45rem;
+            line-height: 1;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+        }
+        .status-label {
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            white-space: nowrap;
+        }
+
+        /* Color Theme Picker Bar */
+        .color-theme-bar {
+            margin-top: 1.25rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.07);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        .palette-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #94a3b8;
+        }
+        .palette-swatches {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .swatch-btn {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .swatch-btn:hover {
+            transform: scale(1.15);
+        }
+        .swatch-btn.selected {
+            border-color: #ffffff;
+            transform: scale(1.2);
+            box-shadow: 0 0 10px currentColor;
+        }
+
+        /* Digital Hug Big Action Button */
+        .hug-action-row {
+            margin-top: 1rem;
+        }
+        .btn-send-hug {
+            width: 100%;
+            background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
+            color: #ffffff;
+            border: none;
+            border-radius: 16px;
+            padding: 0.85rem;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            box-shadow: 0 8px 24px -4px rgba(244, 63, 94, 0.5);
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .btn-send-hug:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px -2px rgba(244, 63, 94, 0.65);
+        }
+        .btn-send-hug:active {
+            transform: scale(0.96);
+        }
+
+        /* Right side: Live Simulated Devices */
+        .devices-preview-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* iPhone Lock Screen Mockup Frame */
+        .phone-mockup {
+            width: 310px;
+            background: #000000;
+            border-radius: 46px;
+            padding: 12px;
+            box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 0 2px rgba(255, 255, 255, 0.12);
+            position: relative;
+            overflow: hidden;
+        }
+        .phone-inner {
+            background: radial-gradient(circle at 50% 25%, rgba(244, 63, 94, 0.35) 0%, #0d1222 65%, #05070d 100%);
+            border-radius: 36px;
+            padding: 1.5rem 1.25rem 2.25rem;
+            text-align: center;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+            min-height: 380px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        /* Dynamic Island */
+        .dynamic-island {
+            width: 90px;
+            height: 24px;
+            background: #000000;
+            border-radius: 20px;
+            margin: 0 auto 1.25rem;
+        }
+        .lock-date {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .lock-clock {
+            font-size: 3.8rem;
+            font-weight: 800;
+            line-height: 1;
+            letter-spacing: -0.04em;
+            margin: 0.1rem 0 1rem;
+            font-variant-numeric: tabular-nums;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        /* The Live Widget inside Lock Screen */
+        .live-widget-card {
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border-radius: 22px;
+            padding: 0.85rem 1rem;
+            text-align: left;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        .live-widget-card::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 15%;
+            bottom: 15%;
+            width: 4px;
+            border-radius: 0 4px 4px 0;
+            background: var(--active-tint, #f43f5e);
+            box-shadow: 0 0 10px var(--active-tint, #f43f5e);
+            transition: background 0.3s ease;
+        }
+        .widget-top-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.35rem;
+        }
+        .widget-partner-name {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #f1f5f9;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+        .widget-time-ago {
+            font-size: 0.68rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        .widget-content-row {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+        }
+        .widget-icon-box {
+            font-size: 1.5rem;
+            line-height: 1;
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .widget-text-col {
+            line-height: 1.25;
+        }
+        .widget-status-name {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #ffffff;
+            transition: color 0.3s ease;
+        }
+        .widget-status-sub {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        /* Apple Watch Mini Preview */
+        .watch-row-preview {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(15, 20, 32, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 0.75rem 1.25rem;
+            width: 310px;
+        }
+        .watch-face {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #000000;
+            border: 2px solid var(--active-tint, #f43f5e);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.35rem;
+            box-shadow: 0 0 12px var(--active-tint-glow, rgba(244, 63, 94, 0.4));
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+        .watch-copy {
+            font-size: 0.8rem;
+            line-height: 1.3;
+        }
+        .watch-copy strong {
+            display: block;
+            color: #ffffff;
+            font-size: 0.88rem;
+        }
+        .watch-copy span {
+            color: #94a3b8;
+        }
+
+        /* Floating Hearts Container for Haptic Digital Hugs */
+        .floating-heart {
+            position: absolute;
+            font-size: 1.8rem;
+            pointer-events: none;
+            animation: floatHeart 1.4s cubic-bezier(0.2, 0.8, 0.4, 1) forwards;
+            z-index: 100;
+        }
+        @keyframes floatHeart {
+            0% { opacity: 0; transform: translateY(0) scale(0.4); }
+            20% { opacity: 1; transform: translateY(-20px) scale(1.2); }
+            100% { opacity: 0; transform: translateY(-110px) scale(0.9); }
+        }
+
+        /* -------------------------------------------------------------
+           SCREENSHOTS SHOWCASE - Device Mockup Frames
+        ------------------------------------------------------------- */
+        .cs-screenshots-wrap {
+            margin: 4rem 0 5rem;
+        }
+        .cs-gallery-header {
+            text-align: center;
+            max-width: 680px;
+            margin: 0 auto 2.5rem;
+        }
+        .cs-gallery-header h2 {
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.6rem;
+        }
+        .cs-gallery-header p {
+            color: #94a3b8;
+            font-size: 1.05rem;
+        }
+        .cs-mockup-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+        @media (max-width: 1024px) {
+            .cs-mockup-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 580px) {
+            .cs-mockup-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .cs-phone-card {
+            background: rgba(15, 22, 36, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 28px;
+            padding: 1.25rem 1rem 1.5rem;
+            text-align: center;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .cs-phone-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(244, 63, 94, 0.3);
+            box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.6), 0 0 30px rgba(244, 63, 94, 0.12);
+        }
+        .cs-phone-frame {
+            border-radius: 26px;
+            overflow: hidden;
+            border: 3px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 15px 35px -8px rgba(0, 0, 0, 0.7);
+            margin-bottom: 1.25rem;
+            background: #000000;
+        }
+        .cs-phone-frame img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+        .cs-phone-card:hover .cs-phone-frame img {
+            transform: scale(1.02);
+        }
+        .cs-phone-caption h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.35rem;
+        }
+        .cs-phone-caption p {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            line-height: 1.45;
+        }
+
+        /* -------------------------------------------------------------
+           BENTO CORE PILLARS (Why Couples Love It)
+        ------------------------------------------------------------- */
+        .cs-pillars-section {
+            margin: 4rem 0 5rem;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        @media (max-width: 768px) {
+            .bento-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .bento-card {
+            background: rgba(16, 22, 36, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 26px;
+            padding: 2rem;
+            transition: all 0.25s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .bento-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(255, 255, 255, 0.16);
+            box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.5);
+        }
+        .bento-icon-pill {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 16px;
+            background: rgba(244, 63, 94, 0.12);
+            color: #f43f5e;
+            font-size: 1.5rem;
+            margin-bottom: 1.25rem;
+            border: 1px solid rgba(244, 63, 94, 0.2);
+        }
+        .bento-card h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.65rem;
+        }
+        .bento-card p {
+            color: #94a3b8;
+            line-height: 1.6;
+            font-size: 0.96rem;
+        }
+
+        /* -------------------------------------------------------------
+           SINGLE SUBSCRIPTION HIGHLIGHT BANNER
+        ------------------------------------------------------------- */
+        .sub-highlight-card {
+            background: linear-gradient(135deg, rgba(244, 63, 94, 0.18) 0%, rgba(168, 85, 247, 0.14) 100%),
+                        rgba(15, 20, 32, 0.85);
+            border: 1px solid rgba(244, 63, 94, 0.3);
+            border-radius: 28px;
+            padding: 2.25rem;
+            margin: 4rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            box-shadow: 0 20px 50px -15px rgba(244, 63, 94, 0.2);
+        }
+        @media (max-width: 820px) {
+            .sub-highlight-card {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        .sub-badge {
+            display: inline-block;
+            background: #f43f5e;
+            color: #ffffff;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            padding: 0.3rem 0.75rem;
+            border-radius: 999px;
+            margin-bottom: 0.75rem;
+        }
+        .sub-highlight-copy h3 {
+            font-size: clamp(1.4rem, 2.8vw, 1.85rem);
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+        }
+        .sub-highlight-copy p {
+            color: #cbd5e1;
+            font-size: 1rem;
+            max-width: 580px;
+            line-height: 1.55;
+        }
+
+        /* -------------------------------------------------------------
+           COMPARISON MATRIX (Elegantly Formatted)
+        ------------------------------------------------------------- */
+        .cs-table-card {
+            background: rgba(14, 19, 31, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 28px;
+            padding: 1.75rem;
+            overflow-x: auto;
+        }
+        .clean-comp-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+        .clean-comp-table th,
+        .clean-comp-table td {
+            padding: 1rem 1.15rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+            font-size: 0.92rem;
+        }
+        .clean-comp-table th {
+            color: #94a3b8;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.78rem;
+            letter-spacing: 0.05em;
+        }
+        .clean-comp-table th.col-highlight {
+            color: #f43f5e;
+            font-weight: 700;
+            background: rgba(244, 63, 94, 0.08);
+            border-radius: 12px 12px 0 0;
+        }
+        .clean-comp-table td.col-highlight {
+            background: rgba(244, 63, 94, 0.05);
+            color: #ffffff;
+            font-weight: 600;
+        }
+        .check-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            color: #34d399;
+            font-weight: 600;
+        }
+        .cross-pill {
+            color: #64748b;
+        }
+
+        /* -------------------------------------------------------------
+           TECHNICAL SPECS - Apple Style Clean Layout
+        ------------------------------------------------------------- */
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+        @media (max-width: 860px) {
+            .specs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .spec-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 18px;
+            padding: 1.25rem;
+        }
+        .spec-label {
+            font-size: 0.76rem;
+            text-transform: uppercase;
+            color: #94a3b8;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.35rem;
+        }
+        .spec-val {
+            font-size: 1.02rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 0.25rem;
+        }
+        .spec-sub {
+            font-size: 0.82rem;
+            color: #64748b;
+            line-height: 1.4;
+        }
+
+        /* -------------------------------------------------------------
+           FAQ ACCORDION
+        ------------------------------------------------------------- */
+        .faq-accordion-group {
+            display: grid;
+            gap: 0.85rem;
+        }
+        .faq-card {
+            background: rgba(15, 20, 32, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+            overflow: hidden;
+            transition: all 0.2s ease;
+        }
+        .faq-card:hover {
+            border-color: rgba(255, 255, 255, 0.16);
+        }
+        .faq-question-btn {
+            width: 100%;
+            background: transparent;
+            border: none;
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #ffffff;
+            font-size: 1.05rem;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            gap: 1rem;
+        }
+        .faq-question-btn:active {
+            transform: scale(0.995);
+        }
+        .faq-chevron {
+            width: 20px;
+            height: 20px;
+            transition: transform 0.25s ease;
+            color: #f43f5e;
+            flex-shrink: 0;
+        }
+        .faq-card.open .faq-chevron {
+            transform: rotate(180deg);
+        }
+        .faq-answer-pane {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s ease;
+            padding: 0 1.5rem;
+            color: #94a3b8;
+            font-size: 0.95rem;
+            line-height: 1.65;
+        }
+        .faq-card.open .faq-answer-pane {
+            max-height: 300px;
+            padding: 0 1.5rem 1.25rem;
+        }
+
+        /* Floating Sticky Download Bar */
+        .cs-floating-bar {
+            position: fixed;
+            bottom: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%) translateY(120px);
+            background: rgba(15, 20, 32, 0.88);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 999px;
+            padding: 0.6rem 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(244, 63, 94, 0.3);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 9999;
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .cs-floating-bar.visible {
+            transform: translateX(-50%) translateY(0);
+        }
+        .float-bar-info {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .float-bar-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+        }
+        .float-bar-text {
+            line-height: 1.2;
+        }
+        .float-bar-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+        .float-bar-sub {
+            font-size: 0.75rem;
+            color: #94a3b8;
+        }
+        .btn-floating-cta {
+            background: #ffffff;
+            color: #000000 !important;
+            padding: 0.55rem 1.25rem;
+            border-radius: 999px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+        .btn-floating-cta:hover {
+            transform: scale(1.04);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        }
+    </style>
 </head>
 
 <body>
-    <nav class="container animate-fade-in" style="padding-top: 2rem;">
-        <a href="/" class="text-muted" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+    <!-- Top Navigation -->
+    <header class="container cs-top-nav animate-fade-in">
+        <a href="/" class="cs-back-link">
             &larr; Back to all apps
         </a>
-    </nav>
+        <div class="cs-version-tag">
+            <span class="pulse-dot"></span>
+            <span>Version 1.4.0 • Updated for iOS 18</span>
+        </div>
+    </header>
 
     <main id="app">
-        <header class="container page-hero text-center animate-fade-in">
-            <p class="kicker">12 Quick-Tap Statuses • Vibrant Color Palettes • iOS & Apple Watch Widgets</p>
-            <img src="https://static.tildacdn.one/tild6136-3732-4535-b565-666163363030/1024x1024bb-2.png"
-                alt="Couple Status app icon"
-                style="width: 104px; height: 104px; border-radius: 24px; margin: 1rem auto 1.5rem; box-shadow: var(--shadow-lg); object-fit: cover;">
-            <h1>Couple Status: 12 quick-tap statuses, custom color themes & lock screen widgets for couples</h1>
-            <p class="hero-copy">
-                Couple Status replaces endless logistics texting with 12 quick-tap status buttons across 4 rows, vibrant custom color palettes, and real-time iOS and Apple Watch widgets. Whether you are navigating long distance (LDR), matching your lock screen aesthetic, protecting deep work focus, or sharing low-pressure nonverbal check-ins with an autistic or neurodivergent partner—Couple Status gives you ambient presence with zero interruption guilt. One subscription covers both partners.
+        <!-- HERO SECTION -->
+        <section class="container cs-hero text-center animate-fade-in">
+            <div class="cs-badge-pill">
+                <span>❤️</span> Designed for iPhone & Apple Watch Widgets
+            </div>
+
+            <div class="cs-app-icon-wrap">
+                <img src="https://static.tildacdn.one/tild6136-3732-4535-b565-666163363030/1024x1024bb-2.png"
+                    alt="Couple Status app icon"
+                    class="cs-app-icon">
+            </div>
+
+            <h1 class="hero-title">
+                Stay close to your partner.<br>
+                <span class="hero-gradient">One tap. Glanceable presence.</span>
+            </h1>
+
+            <p class="hero-subtitle">
+                Replace endless logistics texting with 12 quick-tap statuses, vibrant custom color palettes, and real-time iOS and Apple Watch widgets. Low-pressure connection for long distance, busy routines, and neurodivergent couples. One subscription covers both partners.
             </p>
-            <div class="cta-row">
+
+            <div class="cs-cta-group">
+                <!-- Apple App Store Button -->
                 <a href="https://apps.apple.com/us/app/couple-status-stay-connected/id6756455316"
-                    class="btn" id="btn-download-appstore" target="_blank" rel="noopener noreferrer">Download on the App Store</a>
-                <a href="/couplestatus/android/" class="btn btn-secondary">🤖 Android Edition & Web Pass</a>
-                <a href="/apps-for-autistic-couples/" class="btn btn-secondary">Read neurodivergent guide</a>
-            </div>
-            <div class="pill-list" style="justify-content: center;">
-                <span class="pill">12-button status grid (4 rows)</span>
-                <span class="pill">Curated vibrant color tints</span>
-                <span class="pill">Independent personalization</span>
-                <span class="pill">Lock Screen & Home Screen widgets</span>
-                <span class="pill">Apple Watch complications</span>
-                <span class="pill">One-tap digital hugs</span>
-                <span class="pill">Skip the roommate vibe</span>
-                <span class="pill">Pay once, use together</span>
-            </div>
-        </header>
+                    class="btn-appstore" id="btn-download-appstore" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 170 170">
+                        <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.69-3.03-7.61-7.79-11.77-14.28-6.1-9.58-10.74-20.2-13.92-31.86-3.18-11.66-4.77-22.75-4.77-33.27 0-16.14 4.07-29.5 12.21-40.09 8.14-10.59 18.59-16.03 31.36-16.32 4.9.11 10.15 1.34 15.75 3.69 5.6 2.35 9.4 3.59 11.4 3.69 2.01 0 5.86-1.28 11.56-3.85 5.7-2.56 10.81-3.77 15.34-3.63 11.49.53 21.03 4.54 28.61 12.02 7.58 7.48 12.44 16.92 14.59 28.32-10.23 6.17-15.24 14.88-15.02 26.13.22 9.07 3.55 16.63 10 22.68 6.45 6.05 14.15 9.68 23.1 10.89-2.23 7.08-4.77 13.68-7.62 19.8zm-29.98-113.88c0 7.37-2.73 14.37-8.18 21.01-6.19 7.42-13.8 11.66-22.84 12.73-.22-1.34-.33-2.67-.33-4 0-7.14 2.89-14.32 8.67-21.54 5.78-7.22 13.06-11.39 21.84-12.51.22 1.45.84 2.89.84 4.31z"/>
+                    </svg>
+                    <div class="btn-appstore-text">
+                        <span class="btn-appstore-sub">Download on the</span>
+                        <span class="btn-appstore-main">App Store</span>
+                    </div>
+                </a>
 
-        <section class="container animate-fade-in" style="animation-delay: 0.1s;">
-            <div class="screenshots-container">
-                <div class="screenshot-item"><img src="../images/couplestatus/screenshot-1.jpg" alt="Couple Status 12-button status board with custom colors and partner availability on iPhone"></div>
-                <div class="screenshot-item"><img src="../images/couplestatus/screenshot-2.jpg" alt="Couple Status custom color palette selection and independent board personalization"></div>
-                <div class="screenshot-item"><img src="../images/couplestatus/screenshot-3.jpg" alt="Couple Status lightweight connection moments and digital hugs screen"></div>
-                <div class="screenshot-item"><img src="../images/couplestatus/screenshot-4.jpg" alt="Couple Status Lock Screen widget and Apple Watch complication sync"></div>
+                <!-- Android Edition & Web Pass -->
+                <a href="/couplestatus/android/" class="btn-android-pass">
+                    <span>🤖</span>
+                    <span>Android Edition & Web Pass</span>
+                </a>
+
+                <!-- Neurodivergent Guide -->
+                <a href="/apps-for-autistic-couples/" class="btn-android-pass" style="background: rgba(168, 85, 247, 0.08); border-color: rgba(168, 85, 247, 0.25); color: #e9d5ff;">
+                    <span>🧠</span>
+                    <span>Neurodivergent Guide</span>
+                </a>
+            </div>
+
+            <!-- Trust Bar -->
+            <div class="cs-trust-row">
+                <div class="cs-trust-item">
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                    <span>Pay once, use together (1 subscription covers both)</span>
+                </div>
+                <div class="cs-trust-item">
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                    <span>Apple Watch complications & widgets</span>
+                </div>
+                <div class="cs-trust-item">
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                    <span>Zero camera obligation • 100% private</span>
+                </div>
             </div>
         </section>
 
-        <section class="container section-shell animate-fade-in" style="animation-delay: 0.12s;">
-            <div class="section-heading">
-                <h2>Technical specifications & system architecture</h2>
-                <p>Couple Status is purpose-built for Apple platforms with native WidgetKit interactive extensions and watchOS complications.</p>
-            </div>
+        <!-- -------------------------------------------------------------
+             INTERACTIVE STATUS & WIDGET SIMULATOR (Live Demo)
+        ------------------------------------------------------------- -->
+        <section class="container simulator-section animate-fade-in" style="animation-delay: 0.1s;">
+            <div class="simulator-card">
+                <div class="simulator-header">
+                    <h2>Experience the Glanceable Connection</h2>
+                    <p>Tap any status button or switch color palettes to watch the live Lock Screen widget and Apple Watch complication update instantly in real time.</p>
+                </div>
 
-            <div class="glass-card table-wrap">
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th>Specification</th>
-                            <th>Detail</th>
-                            <th>Capability & Architecture</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>App Store Name</strong></td>
-                            <td>Couple Status: Stay Close (Couple Status: Stay Connected)</td>
-                            <td>Apple App Store Listing (Track ID: 6756455316)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Current Version</strong></td>
-                            <td>Version 1.4.0</td>
-                            <td>Expanded 12-button 4th-row grid, curated tints, independent board customization</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Platforms & OS</strong></td>
-                            <td>iOS 17.0+ • watchOS 10.0+</td>
-                            <td>Optimized for iPhone, Apple Watch (standalone watch app), and iPad</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Status Board Grid</strong></td>
-                            <td>12 quick-tap buttons across 4 rows</td>
-                            <td>Sleeping, Working Out, On My Way, Focused Work, Work Call, Alone Time, Decompressing, Free to Chat, Thinking of You, Flirty Mood, Doing Chores, Low Battery</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Color Customization</strong></td>
-                            <td>Curated vibrant palette</td>
-                            <td>Salmon Red, Sunset Orange, Mint Green, Royal Blue, Soft Violet, Rose Pink, and high-contrast system tints</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Personalization Model</strong></td>
-                            <td>Independent partner boards</td>
-                            <td>Each partner customizes button labels, colors, icons, and notifications without overwriting the other's layout</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Widget Capabilities</strong></td>
-                            <td>WidgetKit Interactive Widgets</td>
-                            <td>Lock Screen (circular, rectangular, inline), Home Screen (small, medium), Apple Watch dials</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Affection Trigger</strong></td>
-                            <td>Haptic Digital Hugs</td>
-                            <td>Instant "Thinking of You" vibration delivered to iPhone and Apple Watch with zero response demand</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Pricing & Licensing</strong></td>
-                            <td>Pay Once, Use Together</td>
-                            <td>Single shared subscription unlocks Premium features for both partners across all devices</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="simulator-grid">
+                    <!-- Left: 12-Button Status Grid -->
+                    <div class="status-board-panel">
+                        <div class="board-controls-header">
+                            <span class="board-title">
+                                <span>📱</span> Your 12-Button Quick Board
+                            </span>
+                            <span class="board-hint">Tap to preview sync ⚡</span>
+                        </div>
+
+                        <div class="status-grid-4x3" id="status-buttons-grid">
+                            <!-- 4 rows x 3 buttons = 12 statuses -->
+                            <button class="status-btn active" data-status="Thinking of You" data-icon="❤️" data-sub="Haptic digital hug sent" data-tint="#f43f5e">
+                                <span class="status-icon">❤️</span>
+                                <span class="status-label">Thinking of You</span>
+                            </button>
+                            <button class="status-btn" data-status="Working Out" data-icon="🏃‍♂️" data-sub="At the gym / outdoors" data-tint="#fb923c">
+                                <span class="status-icon">🏃‍♂️</span>
+                                <span class="status-label">Working Out</span>
+                            </button>
+                            <button class="status-btn" data-status="Sleeping" data-icon="🌙" data-sub="Do not disturb" data-tint="#a855f7">
+                                <span class="status-icon">🌙</span>
+                                <span class="status-label">Sleeping</span>
+                            </button>
+
+                            <button class="status-btn" data-status="Focused Work" data-icon="⚡" data-sub="In deep flow state" data-tint="#3b82f6">
+                                <span class="status-icon">⚡</span>
+                                <span class="status-label">Focused Work</span>
+                            </button>
+                            <button class="status-btn" data-status="Work Call" data-icon="📞" data-sub="Talking with clients" data-tint="#ff6b6b">
+                                <span class="status-icon">📞</span>
+                                <span class="status-label">Work Call</span>
+                            </button>
+                            <button class="status-btn" data-status="Alone Time" data-icon="🎧" data-sub="Recharging sensory battery" data-tint="#34d399">
+                                <span class="status-icon">🎧</span>
+                                <span class="status-label">Alone Time</span>
+                            </button>
+
+                            <button class="status-btn" data-status="On My Way" data-icon="🚗" data-sub="Heading home now" data-tint="#3b82f6">
+                                <span class="status-icon">🚗</span>
+                                <span class="status-label">On My Way</span>
+                            </button>
+                            <button class="status-btn" data-status="Decompressing" data-icon="🛋️" data-sub="Low spoons / relaxing" data-tint="#34d399">
+                                <span class="status-icon">🛋️</span>
+                                <span class="status-label">Decompressing</span>
+                            </button>
+                            <button class="status-btn" data-status="Free to Chat" data-icon="💬" data-sub="Call or text me!" data-tint="#34d399">
+                                <span class="status-icon">💬</span>
+                                <span class="status-label">Free to Chat</span>
+                            </button>
+
+                            <button class="status-btn" data-status="Flirty Mood" data-icon="✨" data-sub="Missing you so much" data-tint="#f43f5e">
+                                <span class="status-icon">✨</span>
+                                <span class="status-label">Flirty Mood</span>
+                            </button>
+                            <button class="status-btn" data-status="Doing Chores" data-icon="🧹" data-sub="Dishes / cleaning" data-tint="#fb923c">
+                                <span class="status-icon">🧹</span>
+                                <span class="status-label">Doing Chores</span>
+                            </button>
+                            <button class="status-btn" data-status="Low Battery" data-icon="🪫" data-sub="Phone dying soon" data-tint="#ff6b6b">
+                                <span class="status-icon">🪫</span>
+                                <span class="status-label">Low Battery</span>
+                            </button>
+                        </div>
+
+                        <!-- Color Palette Personalization Picker -->
+                        <div class="color-theme-bar">
+                            <span class="palette-label">Curated Color Themes:</span>
+                            <div class="palette-swatches">
+                                <button class="swatch-btn selected" data-color="#f43f5e" style="background: #f43f5e;" title="Rose Pink"></button>
+                                <button class="swatch-btn" data-color="#ff6b6b" style="background: #ff6b6b;" title="Salmon Red"></button>
+                                <button class="swatch-btn" data-color="#fb923c" style="background: #fb923c;" title="Sunset Orange"></button>
+                                <button class="swatch-btn" data-color="#34d399" style="background: #34d399;" title="Mint Green"></button>
+                                <button class="swatch-btn" data-color="#3b82f6" style="background: #3b82f6;" title="Royal Blue"></button>
+                                <button class="swatch-btn" data-color="#a855f7" style="background: #a855f7;" title="Soft Violet"></button>
+                            </div>
+                        </div>
+
+                        <!-- One-Tap Digital Hug -->
+                        <div class="hug-action-row">
+                            <button class="btn-send-hug" id="btn-demo-hug">
+                                <span>❤️</span> Send Haptic Digital Hug
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Right: Simulated Partner's Phone Lock Screen & Watch -->
+                    <div class="devices-preview-panel" id="device-preview-panel">
+                        <div class="phone-mockup">
+                            <div class="phone-inner">
+                                <div class="dynamic-island"></div>
+                                <div class="lock-date" id="sim-date">Friday, October 17</div>
+                                <div class="lock-clock" id="sim-clock">09:41</div>
+
+                                <!-- The Live Lock Screen Widget -->
+                                <div class="live-widget-card" id="sim-widget">
+                                    <div class="widget-top-row">
+                                        <div class="widget-partner-name">
+                                            <span>❤️</span> Partner Status
+                                        </div>
+                                        <span class="widget-time-ago" id="sim-time-ago">Just now</span>
+                                    </div>
+                                    <div class="widget-content-row">
+                                        <span class="widget-icon-box" id="sim-icon">❤️</span>
+                                        <div class="widget-text-col">
+                                            <div class="widget-status-name" id="sim-status">Thinking of You</div>
+                                            <div class="widget-status-sub" id="sim-sub">Haptic digital hug sent</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Apple Watch Complication Row -->
+                        <div class="watch-row-preview">
+                            <div class="watch-face" id="sim-watch-face">❤️</div>
+                            <div class="watch-copy">
+                                <strong>Apple Watch Complication</strong>
+                                <span id="sim-watch-status">Synced: Thinking of You</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="container section-shell animate-fade-in" style="animation-delay: 0.15s;">
+        <!-- -------------------------------------------------------------
+             APP SCREENSHOTS SHOWCASE
+        ------------------------------------------------------------- -->
+        <section class="container cs-screenshots-wrap animate-fade-in" style="animation-delay: 0.15s;">
+            <div class="cs-gallery-header">
+                <h2>Designed for Glanceable Daily Life</h2>
+                <p>Every pixel of Couple Status is engineered for instant clarity, zero cognitive load, and high aesthetic personalization.</p>
+            </div>
+
+            <div class="cs-mockup-grid">
+                <!-- Screenshot 1 -->
+                <div class="cs-phone-card">
+                    <div class="cs-phone-frame">
+                        <img src="../images/couplestatus/screenshot-1.jpg"
+                            alt="Couple Status 12-button status board with custom colors and partner availability on iPhone"
+                            loading="lazy">
+                    </div>
+                    <div class="cs-phone-caption">
+                        <h3>12-Status Quick Board</h3>
+                        <p>4 rows of quick-tap status presets to update your partner without typing a single letter.</p>
+                    </div>
+                </div>
+
+                <!-- Screenshot 2 -->
+                <div class="cs-phone-card">
+                    <div class="cs-phone-frame">
+                        <img src="../images/couplestatus/screenshot-2.jpg"
+                            alt="Couple Status custom color palette selection and independent board personalization"
+                            loading="lazy">
+                    </div>
+                    <div class="cs-phone-caption">
+                        <h3>Vibrant Color Themes</h3>
+                        <p>Curated high-contrast tints that match your personal aesthetic and lock screen wallpaper.</p>
+                    </div>
+                </div>
+
+                <!-- Screenshot 3 -->
+                <div class="cs-phone-card">
+                    <div class="cs-phone-frame">
+                        <img src="../images/couplestatus/screenshot-3.jpg"
+                            alt="Couple Status lightweight connection moments and digital hugs screen"
+                            loading="lazy">
+                    </div>
+                    <div class="cs-phone-caption">
+                        <h3>Haptic Digital Hugs</h3>
+                        <p>Send gentle "Thinking of You" vibrations with zero reply pressure or texting demand.</p>
+                    </div>
+                </div>
+
+                <!-- Screenshot 4 -->
+                <div class="cs-phone-card">
+                    <div class="cs-phone-frame">
+                        <img src="../images/couplestatus/screenshot-4.jpg"
+                            alt="Couple Status Lock Screen widget and Apple Watch complication sync"
+                            loading="lazy">
+                    </div>
+                    <div class="cs-phone-caption">
+                        <h3>Widgets & Apple Watch</h3>
+                        <p>Real-time WidgetKit lock screen and standalone watchOS complications for your wrist.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- -------------------------------------------------------------
+             THE 4 CORE PILLARS (BENTO GRID)
+        ------------------------------------------------------------- -->
+        <section class="container cs-pillars-section animate-fade-in" style="animation-delay: 0.2s;">
             <div class="section-heading">
                 <h2>What problem does Couple Status solve?</h2>
-                <p>Couple Status was created to fix everyday relationship friction—replacing noisy administrative texting with ambient, glanceable presence.</p>
+                <p>Couple Status replaces noisy administrative texting with ambient, glanceable presence and intimacy.</p>
             </div>
 
-            <div class="card-grid">
-                <article class="glass-card">
+            <div class="bento-grid">
+                <article class="bento-card">
+                    <div class="bento-icon-pill">🏠</div>
                     <h3>1. Skip the "roommate" vibe</h3>
-                    <p class="text-muted">Stop the endless logistics texts. See if your partner is "Doing Chores", heading home, or needs some "Alone Time" without sending a single text. Focus on being partners, not just logistics managers.</p>
+                    <p>Stop the endless logistics texts. See if your partner is "Doing Chores", heading home, or needs some "Alone Time" without sending a single message. Focus on being lovers and partners, not co-living administrators.</p>
                 </article>
-                <article class="glass-card">
+
+                <article class="bento-card">
+                    <div class="bento-icon-pill">✈️</div>
                     <h3>2. Bridge the distance (LDR)</h3>
-                    <p class="text-muted">Long distance is hard. Couple Status gives you a subtle sense of presence throughout the day. A quick glance at your lock screen widget tells you if they're "Sleeping", in a "Flirty Mood", or just "Thinking of You", making the miles feel shorter without screen fatigue.</p>
+                    <p>Long distance is hard. Couple Status gives you subtle ambient presence throughout the day. A quick glance at your lock screen widget tells you if they're "Sleeping", in a "Flirty Mood", or just "Thinking of You", making the miles feel shorter without FaceTime fatigue.</p>
                 </article>
-                <article class="glass-card">
+
+                <article class="bento-card">
+                    <div class="bento-icon-pill">🤫</div>
                     <h3>3. Connect without "interruption guilt"</h3>
-                    <p class="text-muted">Respect each other's focus. See if they're in a "Work Call", "Working Out", or doing "Focused Work" before you call or text. It's the easiest way to stay in the loop without accidentally breaking their cognitive flow.</p>
+                    <p>Respect each other's focus. See if they're in a "Work Call", "Working Out", or in "Focused Work" before calling or texting. Stay connected without breaking their cognitive flow state.</p>
                 </article>
-                <article class="glass-card">
+
+                <article class="bento-card">
+                    <div class="bento-icon-pill">🧠</div>
                     <h3>4. Low-pressure for neurodivergent couples</h3>
-                    <p class="text-muted">Designed for autistic, ADHD, and AuDHD partners. Signal "Decompressing" or "Alone Time" nonverbally, relieve Rejection Sensitive Dysphoria (RSD), and communicate emotional warmth without demand avoidance or verbal fatigue.</p>
+                    <p>Designed with autistic, ADHD, and AuDHD partners in mind. Signal "Decompressing" or "Alone Time" nonverbally, relieve Rejection Sensitive Dysphoria (RSD), and communicate warmth without sensory overwhelm or verbal fatigue.</p>
                 </article>
             </div>
         </section>
 
-        <section class="container section-shell animate-fade-in" style="animation-delay: 0.2s;">
-            <div class="section-heading">
-                <h2>Version 1.4.0 core features & visual customization</h2>
-                <p>Engineered for low friction, high aesthetic personalization, and glanceable Lock Screen and Apple Watch presence.</p>
-            </div>
-
-            <div class="card-grid">
-                <article class="glass-card">
-                    <h3>Expanded 12-button status board (4 rows)</h3>
-                    <ul class="feature-list">
-                        <li>4 rows of 3 buttons (12 total status options) for instant one-tap status updates.</li>
-                        <li>Includes everyday routine states: Sleeping, Working Out, On My Way, and In Flow.</li>
-                        <li>One tap updates your partner's widgets and watch complications immediately.</li>
-                    </ul>
-                </article>
-                <article class="glass-card">
-                    <h3>Full color customization & vibrant tints</h3>
-                    <ul class="feature-list">
-                        <li>Curated palette of high-contrast vibrant tints (Salmon Red, Sunset Orange, Mint Green, Royal Blue, Soft Violet, Rose Pink).</li>
-                        <li>Customize individual button colors to match your personal aesthetic and wallpaper.</li>
-                        <li>Custom colors seamlessly reflect on Lock Screen widgets and Apple Watch complications.</li>
-                    </ul>
-                </article>
-                <article class="glass-card">
-                    <h3>Independent partner personalization</h3>
-                    <ul class="feature-list">
-                        <li>Each partner customizes their own button names, colors, icons, and notification alerts.</li>
-                        <li>Zero sync conflicts: personalize your board without overwriting your partner's board.</li>
-                        <li>Tailor your quick-tap grid to your unique daily rhythm and work hours.</li>
-                    </ul>
-                </article>
-                <article class="glass-card">
-                    <h3>Lock Screen, Home Screen & Apple Watch sync</h3>
-                    <ul class="feature-list">
-                        <li>Live Lock Screen widgets (circular, rectangular, inline) for glanceable status checks.</li>
-                        <li>Home Screen interactive widgets with instant tap-to-update capabilities.</li>
-                        <li>Apple Watch complications and standalone watch app to stay connected from your wrist.</li>
-                    </ul>
-                </article>
-                <article class="glass-card">
-                    <h3>Send digital hugs with haptic touch</h3>
-                    <ul class="feature-list">
-                        <li>Send a quick nudge to say "Thinking of You" with custom haptic feedback vibrations.</li>
-                        <li>Creates intimate connection moments without initiating an open-ended text chain.</li>
-                        <li>Reassure your partner throughout the day with zero verbal effort or reply obligation.</li>
-                    </ul>
-                </article>
-                <article class="glass-card">
-                    <h3>One subscription covers both partners</h3>
-                    <ul class="feature-list">
-                        <li>Our "Pay once, use together" model means one subscription unlocks Premium for both.</li>
-                        <li>No need to buy two separate subscriptions or manage separate app licenses.</li>
-                        <li>Full access to the 12-button grid, custom colors, and all widgets for both people.</li>
-                    </ul>
-                </article>
+        <!-- -------------------------------------------------------------
+             SINGLE SUBSCRIPTION HIGHLIGHT
+        ------------------------------------------------------------- -->
+        <section class="container animate-fade-in" style="animation-delay: 0.22s;">
+            <div class="sub-highlight-card">
+                <div class="sub-highlight-copy">
+                    <span class="sub-badge">Pay Once, Use Together</span>
+                    <h3>One single subscription unlocks Pro for both partners</h3>
+                    <p>Unlike other couple apps that force each person to buy separate subscriptions, Couple Status covers both of you under one purchase. Share access seamlessly across all your iPhones and Apple Watches.</p>
+                </div>
+                <a href="https://apps.apple.com/us/app/couple-status-stay-connected/id6756455316" class="btn" style="background: #ffffff; color: #000000; font-weight: 700; white-space: nowrap;">
+                    Get Couple Status
+                </a>
             </div>
         </section>
 
+        <!-- -------------------------------------------------------------
+             COMPARISON MATRIX
+        ------------------------------------------------------------- -->
         <section class="container section-shell animate-fade-in" style="animation-delay: 0.25s;">
             <div class="section-heading">
-                <h2>Who is Couple Status for?</h2>
-                <p>Couple Status is strongest when partners want deeper intimacy and mutual situational awareness without adding communication clutter.</p>
-            </div>
-
-            <div class="glass-card">
-                <ul class="feature-list">
-                    <li><strong>Couples escaping the roommate vibe:</strong> Replace endless administrative texting ("Did you do laundry?", "Are you home yet?") with glanceable lock screen awareness.</li>
-                    <li><strong>Long-distance relationships (LDR):</strong> Feel connected across time zones with ambient status displays ("Sleeping", "Working Out", "Flirty Mood") without FaceTime fatigue.</li>
-                    <li><strong>Autistic, ADHD & AuDHD couples:</strong> Communicate nonverbally during low-energy states, protect hyperfocus periods, and eliminate Rejection Sensitive Dysphoria (RSD).</li>
-                    <li><strong>Busy professionals & shift workers:</strong> Avoid interrupting important client calls, surgery shifts, or deep work sessions by checking status before dialing.</li>
-                    <li><strong>Aesthetic iOS widget enthusiasts:</strong> Match lock screen color schemes with custom high-contrast tints and clean Apple Watch complications.</li>
-                </ul>
-                <p style="margin-top: 1.25rem;">
-                    <a href="/apps-for-autistic-couples/" class="text-link">Read our dedicated guide for autistic and neurodivergent couples</a>, or explore the
-                    <a href="/couples-mood-tracker-widget/" class="text-link">couples mood tracker guide</a>, the
-                    <a href="/long-distance-couple-app/" class="text-link">long-distance couple app guide</a>, and the
-                    <a href="/partner-availability-app/" class="text-link">partner availability app guide</a>.
-                </p>
-            </div>
-        </section>
-
-        <section class="container section-shell animate-fade-in" style="animation-delay: 0.28s;">
-            <div class="section-heading">
                 <h2>How Couple Status compares to alternatives</h2>
-                <p>See why couples choose ambient status widgets over camera-mandatory feeds, invasive social trackers, or high-effort quizzes.</p>
+                <p>See why couples prefer ambient widgets over camera-mandatory feeds, invasive social trackers, or high-effort quizzes.</p>
             </div>
 
-            <div class="glass-card table-wrap">
-                <table class="comparison-table">
+            <div class="cs-table-card">
+                <table class="clean-comp-table">
                     <thead>
                         <tr>
                             <th>Dimension</th>
-                            <th>Couple Status (v1.4.0)</th>
+                            <th class="col-highlight">Couple Status (v1.4.0)</th>
                             <th>Locket Widget</th>
                             <th>Obimy</th>
                             <th>Widgetable</th>
@@ -447,64 +1573,64 @@
                     <tbody>
                         <tr>
                             <td><strong>Primary Mechanism</strong></td>
-                            <td><strong>12-button ambient status board & custom color widgets</strong></td>
-                            <td>Live camera photos sent to home screen</td>
+                            <td class="col-highlight">12-button status board & custom color widgets</td>
+                            <td>Live photos sent to home screen</td>
                             <td>Avatar mood touches and virtual actions</td>
-                            <td>Social widgets, pet care & distance trackers</td>
+                            <td>Social widgets, pet care & distance</td>
                         </tr>
                         <tr>
                             <td><strong>Input Friction</strong></td>
-                            <td><strong>Single tap (zero typing, no camera required)</strong></td>
+                            <td class="col-highlight"><span class="check-pill">✓ Single tap (zero typing)</span></td>
                             <td>High (must pose and snap a photo)</td>
                             <td>Medium (in-app touch gestures)</td>
-                            <td>Medium (in-app pet feeding and status setting)</td>
+                            <td>Medium (in-app status setting)</td>
                         </tr>
                         <tr>
                             <td><strong>Status Board Size</strong></td>
-                            <td><strong>12 quick-tap buttons across 4 rows</strong></td>
-                            <td>None (photo-only feed)</td>
+                            <td class="col-highlight"><span class="check-pill">✓ 12 quick-tap buttons (4 rows)</span></td>
+                            <td><span class="cross-pill">None (photo-only feed)</span></td>
                             <td>Limited emotion mood icons</td>
                             <td>Limited status text presets</td>
                         </tr>
                         <tr>
                             <td><strong>Color Customization</strong></td>
-                            <td><strong>Curated vibrant palette (Salmon, Mint, Royal Blue, Violet)</strong></td>
-                            <td>None</td>
+                            <td class="col-highlight"><span class="check-pill">✓ Curated vibrant tints</span></td>
+                            <td><span class="cross-pill">None</span></td>
                             <td>Preset avatar styling</td>
                             <td>Preset theme templates</td>
                         </tr>
                         <tr>
                             <td><strong>Independent Customization</strong></td>
-                            <td><strong>Yes (partners customize boards independently)</strong></td>
-                            <td>No</td>
-                            <td>No</td>
-                            <td>No</td>
+                            <td class="col-highlight"><span class="check-pill">✓ Yes (independent boards)</span></td>
+                            <td><span class="cross-pill">No</span></td>
+                            <td><span class="cross-pill">No</span></td>
+                            <td><span class="cross-pill">No</span></td>
                         </tr>
                         <tr>
                             <td><strong>Apple Watch Support</strong></td>
-                            <td><strong>Complications + standalone watchOS app</strong></td>
-                            <td>No watch complications</td>
+                            <td class="col-highlight"><span class="check-pill">✓ Complications + standalone app</span></td>
+                            <td><span class="cross-pill">No complications</span></td>
                             <td>Limited / None</td>
                             <td>Limited watch widgets</td>
                         </tr>
                         <tr>
                             <td><strong>Camera / Photo Obligation</strong></td>
-                            <td><strong>None (ambient, zero camera fatigue)</strong></td>
+                            <td class="col-highlight"><span class="check-pill">✓ None (100% ambient)</span></td>
                             <td>Mandatory camera use</td>
                             <td>None</td>
                             <td>None</td>
                         </tr>
                         <tr>
                             <td><strong>Neurodivergent & RSD Relief</strong></td>
-                            <td><strong>High (nonverbal signaling, zero response pressure)</strong></td>
+                            <td class="col-highlight"><span class="check-pill">✓ High (nonverbal signaling)</span></td>
                             <td>Low</td>
                             <td>Medium</td>
                             <td>Low</td>
                         </tr>
                         <tr>
                             <td><strong>Subscription Model</strong></td>
-                            <td><strong>Pay once, use together (1 sub covers both)</strong></td>
-                            <td>Ad-supported / individual sub</td>
+                            <td class="col-highlight"><span class="check-pill">✓ 1 subscription covers both</span></td>
+                            <td>Individual subscription</td>
                             <td>Individual subscription</td>
                             <td>Individual subscription</td>
                         </tr>
@@ -513,53 +1639,167 @@
             </div>
         </section>
 
-        <section class="container section-shell animate-fade-in" style="animation-delay: 0.3s;">
+        <!-- -------------------------------------------------------------
+             TECHNICAL SPECIFICATIONS (Refined Apple Product Style)
+        ------------------------------------------------------------- -->
+        <section class="container section-shell animate-fade-in" style="animation-delay: 0.28s;">
             <div class="section-heading">
-                <h2>Frequently asked questions</h2>
-                <p>These answers are structured for people evaluating couple communication apps, relationship widgets, and shared status tools.</p>
+                <h2>Technical Specifications & Architecture</h2>
+                <p>Purpose-built natively for Apple platforms with WidgetKit interactive extensions and watchOS complications.</p>
             </div>
 
-            <div class="faq-grid">
-                <article class="glass-card faq-item">
-                    <h3>What is Couple Status and how does it work?</h3>
-                    <p>Couple Status is an ambient relationship app for iPhone and Apple Watch that lets couples share real-time mood, daily activity, and availability through glanceable Lock Screen widgets, Home Screen widgets, and Apple Watch complications. Partners use an expanded 12-button status board to update their status with a single tap, send haptic digital hugs ("Thinking of You"), and stay connected without endless logistics texting.</p>
-                </article>
-                <article class="glass-card faq-item">
-                    <h3>Can I customize the status button colors and names?</h3>
-                    <p>Yes. App Version 1.4.0 introduces full independent personalization: partners can select from a curated palette of high-contrast vibrant tints (including Salmon Red, Sunset Orange, Mint Green, Royal Blue, Soft Violet, and Rose Pink) and customize status button names, icons, and notification alerts. Each partner customizes their own board independently without overwriting their partner's board.</p>
-                </article>
-                <article class="glass-card faq-item">
-                    <h3>Does Couple Status work on Apple Watch and Lock Screen widgets?</h3>
-                    <p>Yes. Couple Status features native WidgetKit interactive Lock Screen and Home Screen widgets, along with Apple Watch complications and a standalone watchOS app. Custom status colors and active states update in real time across all widget surfaces.</p>
-                </article>
-                <article class="glass-card faq-item">
-                    <h3>How does the subscription work for two partners?</h3>
-                    <p>Couple Status operates on a "Pay once, use together" model: a single subscription unlocks Premium for both partners across all supported devices, with no need for separate purchases.</p>
-                </article>
-                <article class="glass-card faq-item">
-                    <h3>How is Couple Status different from Locket Widget or Obimy?</h3>
-                    <p>Unlike Locket Widget, which requires frequent photos and poses, and Obimy, which focuses on heavy social interactions, Couple Status provides ambient, low-friction presence without camera fatigue, social feeds, or interruption guilt. It also includes 12 quick-tap status presets, independent color theming, Apple Watch complications, and nonverbal communication ideal for busy routines, LDR, and neurodivergent or autistic partners.</p>
-                </article>
-                <article class="glass-card faq-item">
-                    <h3>How does Couple Status help skip the "roommate vibe"?</h3>
-                    <p>Instead of turning communication into endless administrative texts ("Are you home?", "Did you do chores?"), Couple Status lets partners glance at their lock screen to see current status, keeping communication focused on connection rather than logistics management.</p>
-                </article>
-                <article class="glass-card faq-item">
-                    <h3>Why is Couple Status recommended for autistic and neurodivergent couples?</h3>
-                    <p>Couple Status provides low-pressure, nonverbal communication. Partners with Autism or ADHD can signal "Alone Time", "Decompressing", or "In Flow" with a single tap, reducing verbal fatigue, avoiding sensory overwhelm, and preventing Rejection Sensitive Dysphoria (RSD).</p>
-                </article>
-                <article class="glass-card faq-item">
-                    <h3>How does Couple Status prevent interruption guilt?</h3>
-                    <p>By displaying whether your partner is in a "Work Call" or doing "Focused Work" directly on your lock screen, you can check their availability before texting or calling, preserving their flow state.</p>
-                </article>
-                <article class="glass-card faq-item">
-                    <h3>Is Couple Status good for long-distance relationships?</h3>
-                    <p>Yes. It gives long-distance couples an ambient sense of presence throughout the day (such as seeing a "Flirty Mood", "Sleeping", or sending a "Thinking of You" haptic hug) without the pressure of constant messaging.</p>
-                </article>
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <div class="spec-label">Platforms & Compatibility</div>
+                    <div class="spec-val">iOS 17.0+ • watchOS 10.0+</div>
+                    <div class="spec-sub">Native Swift & WidgetKit code. Optimized for iPhone 16/15 Pro Dynamic Island and Apple Watch dials.</div>
+                </div>
+
+                <div class="spec-item">
+                    <div class="spec-label">Status Board Grid</div>
+                    <div class="spec-val">12 Buttons Across 4 Rows</div>
+                    <div class="spec-sub">Expanded 4th-row layout: Sleeping, Working Out, On My Way, Focused Work, Work Call, Alone Time, and more.</div>
+                </div>
+
+                <div class="spec-item">
+                    <div class="spec-label">Widget Extensions</div>
+                    <div class="spec-val">Interactive WidgetKit</div>
+                    <div class="spec-sub">Lock Screen circular, rectangular, inline widgets, plus Home Screen small and medium widgets.</div>
+                </div>
+
+                <div class="spec-item">
+                    <div class="spec-label">Color Personalization</div>
+                    <div class="spec-val">Curated High-Contrast Palette</div>
+                    <div class="spec-sub">Salmon Red, Sunset Orange, Mint Green, Royal Blue, Soft Violet, and Rose Pink.</div>
+                </div>
+
+                <div class="spec-item">
+                    <div class="spec-label">Haptic Feedback</div>
+                    <div class="spec-val">CoreHaptics Digital Hugs</div>
+                    <div class="spec-sub">Delivers subtle tactile heart pulses to iPhone and Apple Watch with zero response demand.</div>
+                </div>
+
+                <div class="spec-item">
+                    <div class="spec-label">Privacy Architecture</div>
+                    <div class="spec-val">Zero Location Tracking</div>
+                    <div class="spec-sub">No background GPS snooping, no camera requirement, and encrypted real-time status sync.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- -------------------------------------------------------------
+             FREQUENTLY ASKED QUESTIONS (ACCORDION)
+        ------------------------------------------------------------- -->
+        <section class="container section-shell animate-fade-in" style="animation-delay: 0.3s;">
+            <div class="section-heading">
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know about Couple Status widgets, setup, and features.</p>
+            </div>
+
+            <div class="faq-accordion-group">
+                <div class="faq-card open">
+                    <button class="faq-question-btn" type="button">
+                        <span>What is Couple Status and how does it work?</span>
+                        <svg class="faq-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+                    </button>
+                    <div class="faq-answer-pane">
+                        Couple Status is an ambient relationship app for iPhone and Apple Watch that lets couples share real-time mood, daily activity, and availability through glanceable Lock Screen widgets, Home Screen widgets, and Apple Watch complications. Partners use an expanded 12-button status board to update their status with a single tap, send haptic digital hugs ("Thinking of You"), and stay connected without endless logistics texting.
+                    </div>
+                </div>
+
+                <div class="faq-card">
+                    <button class="faq-question-btn" type="button">
+                        <span>Can I customize the status button colors and names?</span>
+                        <svg class="faq-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+                    </button>
+                    <div class="faq-answer-pane">
+                        Yes. App Version 1.4.0 introduces full independent personalization: partners can select from a curated palette of high-contrast vibrant tints (including Salmon Red, Sunset Orange, Mint Green, Royal Blue, Soft Violet, and Rose Pink) and customize status button names, icons, and notification alerts. Each partner customizes their own board independently without overwriting their partner's board.
+                    </div>
+                </div>
+
+                <div class="faq-card">
+                    <button class="faq-question-btn" type="button">
+                        <span>Does Couple Status work on Apple Watch and Lock Screen widgets?</span>
+                        <svg class="faq-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+                    </button>
+                    <div class="faq-answer-pane">
+                        Yes. Couple Status features native WidgetKit interactive Lock Screen and Home Screen widgets, along with Apple Watch complications and a standalone watchOS app. Custom status colors and active states update in real time across all widget surfaces.
+                    </div>
+                </div>
+
+                <div class="faq-card">
+                    <button class="faq-question-btn" type="button">
+                        <span>How does the subscription work for two partners?</span>
+                        <svg class="faq-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+                    </button>
+                    <div class="faq-answer-pane">
+                        Couple Status operates on a "Pay once, use together" model: a single subscription unlocks Premium for both partners across all supported devices, with no need for separate purchases.
+                    </div>
+                </div>
+
+                <div class="faq-card">
+                    <button class="faq-question-btn" type="button">
+                        <span>How is Couple Status different from Locket Widget or Obimy?</span>
+                        <svg class="faq-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+                    </button>
+                    <div class="faq-answer-pane">
+                        Unlike Locket Widget, which requires frequent photos and poses, and Obimy, which focuses on heavy social interactions, Couple Status provides ambient, low-friction presence without camera fatigue, social feeds, or interruption guilt. It also includes 12 quick-tap status presets, independent color theming, Apple Watch complications, and nonverbal communication ideal for busy routines, LDR, and neurodivergent or autistic partners.
+                    </div>
+                </div>
+
+                <div class="faq-card">
+                    <button class="faq-question-btn" type="button">
+                        <span>How does Couple Status help skip the "roommate vibe"?</span>
+                        <svg class="faq-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+                    </button>
+                    <div class="faq-answer-pane">
+                        Instead of turning communication into endless administrative texts ("Are you home?", "Did you do chores?"), Couple Status lets partners glance at their lock screen to see current status, keeping communication focused on connection rather than logistics management.
+                    </div>
+                </div>
+
+                <div class="faq-card">
+                    <button class="faq-question-btn" type="button">
+                        <span>Why is Couple Status recommended for autistic and neurodivergent couples?</span>
+                        <svg class="faq-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+                    </button>
+                    <div class="faq-answer-pane">
+                        Couple Status provides low-pressure, nonverbal communication. Partners with Autism or ADHD can signal "Alone Time", "Decompressing", or "In Flow" with a single tap, reducing verbal fatigue, avoiding sensory overwhelm, and preventing Rejection Sensitive Dysphoria (RSD).
+                    </div>
+                </div>
+
+                <div class="faq-card">
+                    <button class="faq-question-btn" type="button">
+                        <span>How does Couple Status prevent interruption guilt?</span>
+                        <svg class="faq-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+                    </button>
+                    <div class="faq-answer-pane">
+                        By displaying whether your partner is in a "Work Call" or doing "Focused Work" directly on your lock screen, you can check their availability before texting or calling, preserving their flow state.
+                    </div>
+                </div>
+
+                <div class="faq-card">
+                    <button class="faq-question-btn" type="button">
+                        <span>Is Couple Status good for long-distance relationships?</span>
+                        <svg class="faq-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+                    </button>
+                    <div class="faq-answer-pane">
+                        Yes. It gives long-distance couples an ambient sense of presence throughout the day (such as seeing a "Flirty Mood", "Sleeping", or sending a "Thinking of You" haptic hug) without the pressure of constant messaging.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Inter-guide SEO links -->
+            <div style="margin-top: 2.5rem; text-align: center; color: #94a3b8; font-size: 0.92rem;">
+                Explore more guides: 
+                <a href="/apps-for-autistic-couples/" class="text-link" style="margin: 0 0.4rem;">Autistic Couples</a> • 
+                <a href="/couples-mood-tracker-widget/" class="text-link" style="margin: 0 0.4rem;">Mood Tracker Widgets</a> • 
+                <a href="/long-distance-couple-app/" class="text-link" style="margin: 0 0.4rem;">Long-Distance Guide</a> • 
+                <a href="/partner-availability-app/" class="text-link" style="margin: 0 0.4rem;">Partner Availability</a>
             </div>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer class="container app-footer">
         <div class="app-footer-links">
             <a href="/couplestatussupport/">Support</a>
@@ -569,6 +1809,162 @@
         <p>&copy; 2026 Halik Magomedov. All rights reserved.</p>
     </footer>
 
+    <!-- Floating Sticky Download Bar -->
+    <div class="cs-floating-bar" id="floating-cta-bar">
+        <div class="float-bar-info">
+            <img src="https://static.tildacdn.one/tild6136-3732-4535-b565-666163363030/1024x1024bb-2.png" alt="Couple Status" class="float-bar-icon">
+            <div class="float-bar-text">
+                <div class="float-bar-title">Couple Status</div>
+                <div class="float-bar-sub">1 Subscription for Both</div>
+            </div>
+        </div>
+        <a href="https://apps.apple.com/us/app/couple-status-stay-connected/id6756455316" class="btn-floating-cta" target="_blank" rel="noopener noreferrer">
+            Get App
+        </a>
+    </div>
+
+    <!-- Interactive Simulator & Accordion Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Clock ticker for simulator
+            const clockEl = document.getElementById('sim-clock');
+            const dateEl = document.getElementById('sim-date');
+            function updateClock() {
+                const now = new Date();
+                const hours = String(now.getHours()).padStart(2, '0');
+                const minutes = String(now.getMinutes()).padStart(2, '0');
+                if (clockEl) clockEl.textContent = `${hours}:${minutes}`;
+                if (dateEl) {
+                    const options = { weekday: 'long', month: 'long', day: 'numeric' };
+                    dateEl.textContent = now.toLocaleDateString('en-US', options);
+                }
+            }
+            updateClock();
+            setInterval(updateClock, 30000);
+
+            // Status Buttons & Widget sync
+            const statusButtons = document.querySelectorAll('.status-btn');
+            const simWidget = document.getElementById('sim-widget');
+            const simIcon = document.getElementById('sim-icon');
+            const simStatus = document.getElementById('sim-status');
+            const simSub = document.getElementById('sim-sub');
+            const simTimeAgo = document.getElementById('sim-time-ago');
+            const simWatchFace = document.getElementById('sim-watch-face');
+            const simWatchStatus = document.getElementById('sim-watch-status');
+
+            statusButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    statusButtons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const status = btn.getAttribute('data-status');
+                    const icon = btn.getAttribute('data-icon');
+                    const sub = btn.getAttribute('data-sub');
+                    const tint = btn.getAttribute('data-tint') || '#f43f5e';
+
+                    // Update root active tint
+                    document.documentElement.style.setProperty('--active-tint', tint);
+                    document.documentElement.style.setProperty('--active-tint-bg', tint + '2e');
+                    document.documentElement.style.setProperty('--active-tint-glow', tint + '4d');
+
+                    // Animate simulated widget
+                    if (simWidget) {
+                        simWidget.style.transform = 'scale(0.95)';
+                        simIcon.textContent = icon;
+                        simStatus.textContent = status;
+                        simSub.textContent = sub;
+                        simTimeAgo.textContent = 'Just now';
+
+                        setTimeout(() => {
+                            simWidget.style.transform = 'scale(1)';
+                        }, 120);
+                    }
+
+                    // Animate watch
+                    if (simWatchFace) {
+                        simWatchFace.style.transform = 'scale(0.85)';
+                        simWatchFace.textContent = icon;
+                        simWatchStatus.textContent = `Synced: ${status}`;
+                        setTimeout(() => {
+                            simWatchFace.style.transform = 'scale(1)';
+                        }, 150);
+                    }
+                });
+            });
+
+            // Color Swatches
+            const swatches = document.querySelectorAll('.swatch-btn');
+            swatches.forEach(swatch => {
+                swatch.addEventListener('click', () => {
+                    swatches.forEach(s => s.classList.remove('selected'));
+                    swatch.classList.add('selected');
+
+                    const color = swatch.getAttribute('data-color');
+                    document.documentElement.style.setProperty('--active-tint', color);
+                    document.documentElement.style.setProperty('--active-tint-bg', color + '2e');
+                    document.documentElement.style.setProperty('--active-tint-glow', color + '4d');
+
+                    const activeBtn = document.querySelector('.status-btn.active');
+                    if (activeBtn) {
+                        activeBtn.style.borderColor = color;
+                    }
+                });
+            });
+
+            // Digital Hug Button Animation
+            const hugBtn = document.getElementById('btn-demo-hug');
+            const phonePanel = document.getElementById('device-preview-panel');
+            if (hugBtn && phonePanel) {
+                hugBtn.addEventListener('click', () => {
+                    // Trigger "Thinking of You" active state
+                    const toyBtn = document.querySelector('.status-btn[data-status="Thinking of You"]');
+                    if (toyBtn) toyBtn.click();
+
+                    // Generate floating hearts over device
+                    for (let i = 0; i < 6; i++) {
+                        setTimeout(() => {
+                            const heart = document.createElement('div');
+                            heart.className = 'floating-heart';
+                            heart.textContent = ['❤️', '💖', '✨', '🥰', '💕'][Math.floor(Math.random() * 5)];
+                            const rect = phonePanel.getBoundingClientRect();
+                            heart.style.left = `${30 + Math.random() * 40}%`;
+                            heart.style.top = `${40 + Math.random() * 30}%`;
+                            phonePanel.appendChild(heart);
+
+                            setTimeout(() => heart.remove(), 1400);
+                        }, i * 140);
+                    }
+                });
+            }
+
+            // FAQ Accordion
+            const faqCards = document.querySelectorAll('.faq-card');
+            faqCards.forEach(card => {
+                const btn = card.querySelector('.faq-question-btn');
+                if (btn) {
+                    btn.addEventListener('click', () => {
+                        const isOpen = card.classList.contains('open');
+                        faqCards.forEach(c => c.classList.remove('open'));
+                        if (!isOpen) {
+                            card.classList.add('open');
+                        }
+                    });
+                }
+            });
+
+            // Floating Sticky CTA Bar on scroll
+            const floatBar = document.getElementById('floating-cta-bar');
+            if (floatBar) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 450) {
+                        floatBar.classList.add('visible');
+                    } else {
+                        floatBar.classList.remove('visible');
+                    }
+                }, { passive: true });
+            }
+        });
+    </script>
     <script type="module" src="/src/main.js"></script>
 </body>
 
